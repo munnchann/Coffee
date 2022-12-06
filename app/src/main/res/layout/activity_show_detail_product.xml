@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/show_detail_product"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+  <Button
+      android:id="@+id/btnadd"
+      android:layout_width="250dp"
+      android:layout_height="50dp"
+      android:layout_marginStart="135dp"
+      android:layout_marginTop="35dp"
+      android:background="@drawable/size_background_detail"
+      android:text="Order"
+      android:textColor="#FBFBFB"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
+
+  <TextView
+      android:id="@+id/idpro"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="id"
+      android:visibility="gone" />
+
+  <ImageView
+      android:id="@+id/img_pro"
+      android:layout_width="200dp"
+      android:layout_height="250dp"
+      android:layout_marginStart="120dp"
+      android:layout_marginTop="80dp"
+      android:layout_marginEnd="120dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:srcCompat="@drawable/cf" />
+
+  <TextView
+      android:id="@+id/pricetxt"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="200dp"
+      android:layout_marginTop="370dp"
+      android:layout_marginEnd="130dp"
+      android:text="1.5 "
+      android:textColor="#000000"
+      android:textStyle="bold"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.52"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+      android:id="@+id/textView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="230dp"
+      android:layout_marginTop="370dp"
+      android:layout_marginEnd="130dp"
+      android:text="$"
+      android:textColor="#131313"
+      android:textStyle="bold"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+      android:id="@+id/name_product"
+      android:layout_width="100dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="50dp"
+      android:layout_marginTop="370dp"
+      android:layout_marginEnd="177dp"
+      android:fontFamily="@font/archivo_narrow"
+      android:maxLines="2"
+      android:text="Coffee"
+      android:textColor="#090808"
+      android:textSize="16sp"
+      android:textStyle="bold"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+      android:id="@+id/detail_product"
+      android:layout_width="350dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="50dp"
+      android:layout_marginTop="410dp"
+      android:layout_marginEnd="50dp"
+      android:gravity="center"
+      android:text="Cà phê Phin thế hệ mới với chất Phin êm hơn, kết hợp cùng Hạnh nhân thơm bùi mang đến hương vị mới lạ, không thể hấp dẫn hơn!"
+      android:textColor="#0C0C0C"
+      android:textSize="16sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.51"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <ImageView
+      android:id="@+id/img_close"
+      android:layout_width="20dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="30dp"
+      android:layout_marginEnd="20dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"
+      app:tint="@color/black" />
+
+  <ImageView
+      android:id="@+id/img_back"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="30dp"
+      android:layout_marginTop="30dp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:srcCompat="?attr/homeAsUpIndicator" />
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/constraintLayout3"
+      android:layout_width="match_parent"
+      android:layout_height="5dp"
+      android:layout_marginTop="680dp"
+      android:background="@drawable/crossbar"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:layout_editor_absoluteX="0dp">
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <ImageView
+      android:id="@+id/add_img"
+      android:layout_width="25dp"
+      android:layout_height="30dp"
+      android:layout_marginStart="23dp"
+      android:layout_marginTop="50dp"
+      app:layout_constraintStart_toStartOf="@id/qty"
+      app:layout_constraintTop_toTopOf="@id/constraintLayout3"
+      app:srcCompat="@drawable/add" />
+
+  <ImageView
+      android:id="@+id/minor_img"
+      android:layout_width="25dp"
+      android:layout_height="30dp"
+      android:layout_marginStart="37dp"
+      android:layout_marginTop="50dp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@id/constraintLayout3"
+      app:srcCompat="@drawable/minimize" />
+
+  <TextView
+      android:id="@+id/qty"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="75dp"
+      android:layout_marginTop="54dp"
+      android:text="1"
+      android:textColor="#020202"
+      android:textSize="16sp"
+      android:textStyle="bold"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@id/constraintLayout3" />
+
+  <TextView
+      android:id="@+id/textView8"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="50dp"
+      android:layout_marginTop="530dp"
+      android:text="Add note for shop "
+      android:textColor="#070707"
+      android:textSize="16sp"
+      android:textStyle="bold"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <ImageView
+      android:id="@+id/imageView9"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="20dp"
+      android:layout_marginTop="530dp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:srcCompat="@drawable/sticky_notes" />
+
+  <EditText
+      android:id="@+id/addnote"
+      android:layout_width="0dp"
+      android:layout_height="32dp"
+      android:layout_marginStart="20dp"
+      android:layout_marginTop="570dp"
+      android:layout_marginEnd="20dp"
+      android:background="@drawable/search_background"
+      android:ems="10"
+      android:inputType="textPersonName"
+      android:paddingLeft="12dp"
+      android:text="Enter note..."
+      android:textColor="#1B1A1A"
+      android:textSize="14sp"
+      android:textStyle="italic"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+      android:id="@+id/textView9"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="140dp"
+      android:layout_marginTop="530dp"
+      android:text="optional"
+      android:textSize="15sp"
+      app:layout_constraintStart_toStartOf="@id/textView8"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <ImageView
+      android:id="@+id/btnheart"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="200dp"
+      android:layout_marginTop="370dp"
+      android:layout_marginEnd="30dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:srcCompat="@drawable/love_hand_drawn_heart_symbol_outline" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayoutCart"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.CartActivity">
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/btnbackcate"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/bottom_bg"
+                android:drawableStart="@drawable/less_than_symbol"
+                android:paddingStart="5dp" />
+
+            <TextView
+                android:id="@+id/Payment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="150dp"
+                android:layout_marginTop="-25dp"
+                android:layout_weight="1"
+                android:text="Order Details"
+                android:textAlignment="center"
+                android:textColor="#120F0F"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnpayonl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/archivo_narrow"
+                android:paddingStart="8dp"
+                android:text="My Cart"
+                android:textAlignment="viewStart"
+                android:textColor="#332222"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvlistord"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/payy"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/archivo_narrow"
+                    android:text="Delivery Location"
+                    android:textColor="#332222"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/textView10"
+                    app:srcCompat="@drawable/map" />
+
+                <TextView
+                    android:id="@+id/txtaddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="32dp"
+                    android:text="35/6 D5  Binh Thanh HCM"
+                    android:textColor="#191818"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/textView10" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginTop="80dp"
+                    android:fontFamily="@font/archivo_narrow"
+                    android:text="Payment Method"
+                    android:textColor="#332222"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/textView10" />
+
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/textView13"
+                    app:srcCompat="@drawable/pay_per_click" />
+
+                <ImageView
+                    android:id="@+id/btnnext"
+                    android:layout_width="20dp"
+                    android:layout_height="15dp"
+                    android:layout_marginStart="370dp"
+                    android:layout_marginTop="26dp"
+                    android:visibility="invisible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/textView13"
+                    app:srcCompat="@drawable/next" />
+
+                <TextView
+                    android:id="@+id/txtpay"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="30dp"
+                    android:textColor="#191818"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/textView13" />
+
+                <TextView
+                    android:id="@+id/txtpay2"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="30dp"
+                    android:text="Pay Pal"
+                    android:textColor="#191818"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/textView13" />
+
+                <ImageView
+                    android:id="@+id/imageView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="180dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/textView10"
+                    app:srcCompat="@drawable/notes" />
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="180dp"
+                    android:fontFamily="@font/archivo_narrow"
+                    android:text="Order Info"
+                    android:textColor="#332222"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/textView10" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="4dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Subtotal"
+                    android:textColor="#302F2F"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/totaltxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="$0"
+                    android:textAlignment="viewEnd"
+                    android:textColor="#121111"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="4dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/stt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Shipping Fee"
+                    android:textColor="#302F2F"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/setstt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="$0"
+                    android:textAlignment="viewEnd"
+                    android:textColor="#121111"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="4dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Total"
+                    android:textColor="#302F2F"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/totalPrice"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="0"
+                    android:textAlignment="viewEnd"
+                    android:textColor="#EF5252"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/totalPrice2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="$"
+                    android:textAlignment="viewStart"
+                    android:textColor="#EF5252"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bottomconstraint"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/btnord"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="130dp"
+                    android:layout_marginTop="140dp"
+                    android:background="@drawable/size_background_detail"
+                    android:backgroundTint="#8FCBD3"
+                    android:text="ORDER"
+                    android:textColor="#F4F1F1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/btnord2"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="130dp"
+                    android:layout_marginTop="65dp"
+                    android:background="@drawable/size_background_detail"
+                    android:backgroundTint="#8FCBD3"
+                    android:text="ORDER2"
+                    android:textColor="#EDDDDD"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/imgempty"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="175dp"
+        android:layout_marginTop="400dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@id/scrollview"
+        app:layout_constraintTop_toTopOf="@id/scrollview"
+        app:srcCompat="@drawable/basket" />
+
+    <TextView
+        android:id="@+id/noproduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="380dp"
+        android:text="No Product"
+        android:textColor="#201E1E"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--    <androidx.coordinatorlayout.widget.CoordinatorLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="60dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+
+<!--        app:layout_constraintStart_toStartOf="parent">-->
+
+<!--        <com.aurelhubert.ahbottomnavigation.AHBottomNavigation-->
+<!--            android:id="@+id/bottom_navigation"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_gravity="bottom"-->
+<!--            android:background="@drawable/bg_detail" />-->
+<!--        &lt;!&ndash;        <com.google.android.material.bottomappbar.BottomAppBar&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:id="@+id/app_bar"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_gravity="bottom"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:background="@drawable/size_background_detail"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:backgroundTint="@color/white"&ndash;&gt;-->
+
+<!--        &lt;!&ndash;            app:fabCradleRoundedCornerRadius="58dp">&ndash;&gt;-->
+
+<!--        &lt;!&ndash;            <LinearLayout&ndash;&gt;-->
+<!--        &lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;                android:layout_height="match_parent">&ndash;&gt;-->
+
+<!--        &lt;!&ndash;                <LinearLayout&ndash;&gt;-->
+<!--        &lt;!&ndash;                    android:layout_width="0dp"&ndash;&gt;-->
+<!--        &lt;!&ndash;                    android:layout_height="match_parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;                    android:layout_weight="0.2">&ndash;&gt;-->
+
+<!--        &lt;!&ndash;                    <LinearLayout&ndash;&gt;-->
+<!--        &lt;!&ndash;                        android:id="@+id/homeBtn"&ndash;&gt;-->
+<!--        &lt;!&ndash;                        android:layout_width="0dp"&ndash;&gt;-->
+<!--        &lt;!&ndash;                        android:layout_height="match_parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;                        android:layout_weight="0.2"&ndash;&gt;-->
+<!--        &lt;!&ndash;                        android:orientation="vertical">&ndash;&gt;-->
+
+<!--        &lt;!&ndash;                        <ImageView&ndash;&gt;-->
+<!--        &lt;!&ndash;                            android:id="@+id/imageView5"&ndash;&gt;-->
+<!--        &lt;!&ndash;                            android:layout_width="match_parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;                            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--        &lt;!&ndash;                            app:srcCompat="@drawable/shop" />&ndash;&gt;-->
+
+<!--        &lt;!&ndash;                        <TextView&ndash;&gt;-->
+<!--        &lt;!&ndash;                            android:id="@+id/shop"&ndash;&gt;-->
+<!--        &lt;!&ndash;                            android:layout_width="match_parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;                            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--        &lt;!&ndash;                            android:text="Home"&ndash;&gt;-->
+<!--        &lt;!&ndash;                            android:textAlignment="center" />&ndash;&gt;-->
+<!--        &lt;!&ndash;                    </LinearLayout>&ndash;&gt;-->
+<!--        &lt;!&ndash;                </LinearLayout>&ndash;&gt;-->
+
+<!--        &lt;!&ndash;                <LinearLayout&ndash;&gt;-->
+<!--        &lt;!&ndash;                    android:layout_width="0dp"&ndash;&gt;-->
+<!--        &lt;!&ndash;                    android:layout_height="match_parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;                    android:layout_weight="0.2">&ndash;&gt;-->
+
+<!--        &lt;!&ndash;                    <LinearLayout&ndash;&gt;-->
+<!--        &lt;!&ndash;                        android:id="@+id/categoryBtn"&ndash;&gt;-->
+<!--        &lt;!&ndash;                        android:layout_width="0dp"&ndash;&gt;-->
+<!--        &lt;!&ndash;                        android:layout_height="match_parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;                        android:layout_weight="0.2"&ndash;&gt;-->
+<!--        &lt;!&ndash;                        android:orientation="vertical">&ndash;&gt;-->
+
+<!--        &lt;!&ndash;                        <ImageView&ndash;&gt;-->
+<!--        &lt;!&ndash;                            android:id="@+id/imageView6"&ndash;&gt;-->
+<!--        &lt;!&ndash;                            android:layout_width="match_parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;                            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--        &lt;!&ndash;                            app:srcCompat="@drawable/categories" />&ndash;&gt;-->
+
+<!--        &lt;!&ndash;                        <TextView&ndash;&gt;-->
+<!--        &lt;!&ndash;                            android:id="@+id/category"&ndash;&gt;-->
+<!--        &lt;!&ndash;                            android:layout_width="match_parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;                            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--        &lt;!&ndash;                            android:text="Categories"&ndash;&gt;-->
+<!--        &lt;!&ndash;                            android:textAlignment="center" />&ndash;&gt;-->
+<!--        &lt;!&ndash;                    </LinearLayout>&ndash;&gt;-->
+<!--        &lt;!&ndash;                </LinearLayout>&ndash;&gt;-->
+
+<!--        &lt;!&ndash;                <LinearLayout&ndash;&gt;-->
+<!--        &lt;!&ndash;                    android:layout_width="0dp"&ndash;&gt;-->
+<!--        &lt;!&ndash;                    android:layout_height="match_parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;                    android:layout_weight="0.2">&ndash;&gt;-->
+
+<!--        &lt;!&ndash;                    <LinearLayout&ndash;&gt;-->
+<!--        &lt;!&ndash;                        android:id="@+id/couponBtn"&ndash;&gt;-->
+<!--        &lt;!&ndash;                        android:layout_width="0dp"&ndash;&gt;-->
+<!--        &lt;!&ndash;                        android:layout_height="match_parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;                        android:layout_weight="0.2"&ndash;&gt;-->
+<!--        &lt;!&ndash;                        android:orientation="vertical">&ndash;&gt;-->
+
+<!--        &lt;!&ndash;                        <ImageView&ndash;&gt;-->
+<!--        &lt;!&ndash;                            android:id="@+id/imageView7"&ndash;&gt;-->
+<!--        &lt;!&ndash;                            android:layout_width="match_parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;                            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--        &lt;!&ndash;                            app:srcCompat="@drawable/gift_box" />&ndash;&gt;-->
+
+<!--        &lt;!&ndash;                        <TextView&ndash;&gt;-->
+<!--        &lt;!&ndash;                            android:id="@+id/coupon"&ndash;&gt;-->
+<!--        &lt;!&ndash;                            android:layout_width="match_parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;                            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--        &lt;!&ndash;                            android:text="Coupon"&ndash;&gt;-->
+<!--        &lt;!&ndash;                            android:textAlignment="center" />&ndash;&gt;-->
+<!--        &lt;!&ndash;                    </LinearLayout>&ndash;&gt;-->
+<!--        &lt;!&ndash;                </LinearLayout>&ndash;&gt;-->
+
+<!--        &lt;!&ndash;                <LinearLayout&ndash;&gt;-->
+<!--        &lt;!&ndash;                    android:id="@+id/settingBtn"&ndash;&gt;-->
+<!--        &lt;!&ndash;                    android:layout_width="0dp"&ndash;&gt;-->
+<!--        &lt;!&ndash;                    android:layout_height="match_parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;                    android:layout_weight="0.2"&ndash;&gt;-->
+<!--        &lt;!&ndash;                    android:orientation="vertical">&ndash;&gt;-->
+
+<!--        &lt;!&ndash;                    <ImageView&ndash;&gt;-->
+<!--        &lt;!&ndash;                        android:id="@+id/imageView4"&ndash;&gt;-->
+<!--        &lt;!&ndash;                        android:layout_width="match_parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--        &lt;!&ndash;                        app:srcCompat="@drawable/settings" />&ndash;&gt;-->
+
+<!--        &lt;!&ndash;                    <TextView&ndash;&gt;-->
+<!--        &lt;!&ndash;                        android:id="@+id/setting"&ndash;&gt;-->
+<!--        &lt;!&ndash;                        android:layout_width="match_parent"&ndash;&gt;-->
+<!--        &lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--        &lt;!&ndash;                        android:text="Other"&ndash;&gt;-->
+<!--        &lt;!&ndash;                        android:textAlignment="center" />&ndash;&gt;-->
+<!--        &lt;!&ndash;                </LinearLayout>&ndash;&gt;-->
+<!--        &lt;!&ndash;            </LinearLayout>&ndash;&gt;-->
+<!--        &lt;!&ndash;        </com.google.android.material.bottomappbar.BottomAppBar>&ndash;&gt;-->
+<!--    </androidx.coordinatorlayout.widget.CoordinatorLayout>-->
+</androidx.constraintlayout.widget.ConstraintLayout>
