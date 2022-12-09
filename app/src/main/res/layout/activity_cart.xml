@@ -10,7 +10,8 @@
     <ScrollView
         android:id="@+id/scrollview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#FEFCF3">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,30 +38,17 @@
                 android:text="Order Details"
                 android:textAlignment="center"
                 android:textColor="#120F0F"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/btnpayonl"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="20dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/archivo_narrow"
-                android:paddingStart="8dp"
-                android:text="My Cart"
-                android:textAlignment="viewStart"
-                android:textColor="#332222"
-                android:textSize="16sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rcvlistord"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
-                android:layout_weight="1" />
+                android:layout_marginTop="15dp"
+                android:layout_weight="1">
+
+            </androidx.recyclerview.widget.RecyclerView>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/payy"
@@ -110,7 +98,7 @@
                     android:layout_marginStart="23dp"
                     android:layout_marginTop="80dp"
                     android:fontFamily="@font/archivo_narrow"
-                    android:text="Payment Method"
+                    android:text="Payment"
                     android:textColor="#332222"
                     android:textSize="16sp"
                     android:textStyle="bold"
@@ -300,19 +288,6 @@
                 android:layout_weight="1">
 
                 <Button
-                    android:id="@+id/btnord"
-                    android:layout_width="150dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="130dp"
-                    android:layout_marginTop="140dp"
-                    android:background="@drawable/size_background_detail"
-                    android:backgroundTint="#8FCBD3"
-                    android:text="ORDER"
-                    android:textColor="#F4F1F1"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Button
                     android:id="@+id/btnord2"
                     android:layout_width="150dp"
                     android:layout_height="40dp"
@@ -323,6 +298,19 @@
                     android:text="ORDER2"
                     android:textColor="#EDDDDD"
                     android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnord"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="130dp"
+                    android:layout_marginTop="84dp"
+                    android:background="@drawable/imnor"
+                    android:backgroundTint="#FFDCA9"
+                    android:text="ORDER"
+                    android:textColor="#232222"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>

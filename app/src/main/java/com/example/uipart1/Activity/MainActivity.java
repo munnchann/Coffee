@@ -68,8 +68,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewFoodList();
         ListMenu = new ArrayList<>();
         categoryList = new ArrayList<>();
-        callApiCategory();
-        ahBottomNavigation = findViewById(R.id.bottom_navigation);
+       // callApiCategory();
+//        ahBottomNavigation = findViewById(R.id.bottom_navigation);
         notification = findViewById(R.id.badge);
         btnsearch = findViewById(R.id.btnsearch);
         menuApdater = new MenuApdater(ListMenu);
@@ -116,24 +116,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // api call category
-    private void callApiCategory() {
-
-        ApiService.apiService.getListCategory().enqueue(new Callback<Category>() {
-            @Override
-            public void onResponse(Call<Category> call, Response<Category> response) {
-                categoryList = response.body().getListCategory();
-                CategoryAdapter categoryAdapter = new CategoryAdapter(categoryList);
-                recyclerViewCategoryList.setAdapter(categoryAdapter);
-
-            }
-
-            @Override
-            public void onFailure(Call<Category> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "onFailure" + t.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
-    }
+//    private void callApiCategory() {
+//
+//        ApiService.apiService.getListCategory().enqueue(new Callback<Category>() {
+//            @Override
+//            public void onResponse(Call<Category> call, Response<Category> response) {
+//                categoryList = response.body().getListCategory();
+//                CategoryAdapter categoryAdapter = new CategoryAdapter(categoryList);
+//                recyclerViewCategoryList.setAdapter(categoryAdapter);
+//
+//            }
+//
+//            @Override
+//            public void onFailure(Call<Category> call, Throwable t) {
+//                Toast.makeText(MainActivity.this, "onFailure" + t.getMessage(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//
+//    }
 
     // call api product
     private void callApiGetProduct() {

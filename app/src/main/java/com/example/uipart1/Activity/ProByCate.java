@@ -39,7 +39,7 @@ public class ProByCate extends AppCompatActivity {
         setContentView(R.layout.activity_pro_by_cate);
         ListMenu = new ArrayList<>();
         getInitView();
-        CallApi();
+//        CallApi();
         recyclerViewMenuList();
     }
      private void getInitView(){
@@ -68,27 +68,27 @@ public class ProByCate extends AppCompatActivity {
             }
         });
     }
-     private void CallApi(){
-         Intent intent = getIntent();
-         TextView txtidcate = (TextView) findViewById(R.id.txtidcate);
-         TextView txtnamecate = (TextView) findViewById(R.id.txtnamecate);
-         txtidcate.setText(String.valueOf(intent.getIntExtra(CategoryAdapter.IdKeys, 0)));
-         txtnamecate.setText(intent.getStringExtra(CategoryAdapter.NameKeys));
-         int idcate = Integer.parseInt(txtidcate.getText().toString());
-         ApiService.apiService.getProductByCategory(idcate).enqueue(new Callback<MenuDomain>() {
-             @Override
-             public void onResponse(Call<MenuDomain> call, Response<MenuDomain> response) {
-                 if (response.isSuccessful() && response.body() != null) {
-                     ListMenu = response.body().getMenuDomainList();
-                     MenuApdater menuApdater = new MenuApdater(ListMenu);
-                     rcvlistpro.setAdapter(menuApdater);
-                 }
-             }
-
-             @Override
-             public void onFailure(Call<MenuDomain> call, Throwable t) {
-                 Toast.makeText(ProByCate.this, "onFailure" + t.getMessage(), Toast.LENGTH_SHORT).show();
-             }
-         });
-     }
+//     private void CallApi(){
+//         Intent intent = getIntent();
+//         TextView txtidcate = (TextView) findViewById(R.id.txtidcate);
+//         TextView txtnamecate = (TextView) findViewById(R.id.txtnamecate);
+//         txtidcate.setText(String.valueOf(intent.getIntExtra(CategoryAdapter.IdKeys, 0)));
+//         txtnamecate.setText(intent.getStringExtra(CategoryAdapter.NameKeys));
+//         int idcate = Integer.parseInt(txtidcate.getText().toString());
+//         ApiService.apiService.getProductByCategory(idcate).enqueue(new Callback<MenuDomain>() {
+//             @Override
+//             public void onResponse(Call<MenuDomain> call, Response<MenuDomain> response) {
+//                 if (response.isSuccessful() && response.body() != null) {
+//                     ListMenu = response.body().getMenuDomainList();
+//                     MenuApdater menuApdater = new MenuApdater(ListMenu);
+//                     rcvlistpro.setAdapter(menuApdater);
+//                 }
+//             }
+//
+//             @Override
+//             public void onFailure(Call<MenuDomain> call, Throwable t) {
+//                 Toast.makeText(ProByCate.this, "onFailure" + t.getMessage(), Toast.LENGTH_SHORT).show();
+//             }
+//         });
+//     }
 }

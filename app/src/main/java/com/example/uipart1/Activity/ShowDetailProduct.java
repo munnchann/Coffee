@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.uipart1.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,23 +48,23 @@ public class ShowDetailProduct extends AppCompatActivity {
     }
 
     private void getView() {
-        String baseUrl = "http://192.168.1.155:4000/api/product/";
+        String baseUrl = "http://10.0.2.2:4000/image/";
         Intent intent = getIntent();
         name_product.setText(intent.getStringExtra(MenuApdater.ProductKey));
         pricetxt.setText(String.valueOf(intent.getDoubleExtra(MenuApdater.PriceKey, 0)));
         detail_product.setText(intent.getStringExtra(MenuApdater.DescKey));
-//        Glide.with(getApplicationContext())
-//                .load(baseUrl + intent.getStringExtra(MenuApdater.ImgKey))
-//                .into(img_pro);
+        Picasso.with(getApplicationContext())
+                .load(baseUrl+intent.getStringExtra(MenuApdater.ImgKey))
+                .into(img_pro);
         qty.setText(String.valueOf(qtyCart));
         idpro.setText(String.valueOf(intent.getIntExtra(MenuApdater.IdKey, 0)));
         add_img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (qtyCart == 9) {
-                        qty.setEnabled(false);
-                        qty.setText(String.valueOf(qtyCart));
-                }else {
+                    qty.setEnabled(false);
+                    qty.setText(String.valueOf(qtyCart));
+                } else {
                     qtyCart = qtyCart + 1;
                     qty.setText(String.valueOf(qtyCart));
                 }
@@ -91,13 +92,13 @@ public class ShowDetailProduct extends AppCompatActivity {
     private void addCart() {
         String name = String.valueOf(name_product.getText());
         Double price = Double.parseDouble(pricetxt.getText().toString());
-//            String image = String.valueOf(img_pro.);
+            String image = String.valueOf(img_pro.toString());
         int quantity = Integer.parseInt(qty.getText().toString());
         int id = Integer.parseInt(idpro.getText().toString());
         Boolean check = CartDatabase.getInstance(this).cartDao().isexist(id);
         try {
             if (check == false) {
-                CartDomain cart = new CartDomain(id, name, price, quantity);
+                CartDomain cart = new CartDomain(id, name, price,image, quantity);
                 CartDatabase.getInstance(this).cartDao().InsertCart(cart);
                 Toast.makeText(this, "Added Success", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(this, MainActivity.class);
@@ -106,10 +107,10 @@ public class ShowDetailProduct extends AppCompatActivity {
                 List<CartDomain> cartDomainList = CartDatabase.getInstance(this).cartDao().getAllCart();
 
                 for (int i = 0; i < cartDomainList.size(); i++) {
-                    if(cartDomainList.get(i).getId() == id){
+                    if (cartDomainList.get(i).getId() == id) {
 
                         cartDomainList.get(i).setQuantity(quantity + cartDomainList.get(i).getQuantity());
-                       System.out.println((quantity + cartDomainList.get(i).getQuantity()));
+                        System.out.println((quantity + cartDomainList.get(i).getQuantity()));
                     }
                     CartDatabase.getInstance(this).cartDao().updateQty(cartDomainList.get(i).getQuantity(), cartDomainList.get(i).getId());
                 }
@@ -127,7 +128,6 @@ public class ShowDetailProduct extends AppCompatActivity {
 
     private void initView() {
         qty = findViewById(R.id.qty);
-        addnote = findViewById(R.id.addnote);
         minor_img = findViewById(R.id.minor_img);
         add_img = findViewById(R.id.add_img);
         img_pro = findViewById(R.id.img_pro);

@@ -9,17 +9,17 @@ public class CartDomain {
     public int id;
     public String name;
     public Double price;
-//    public String image;
+    public String image;
     public int quantity;
 
     public CartDomain() {
     }
 
-    public CartDomain(int id, String name, Double price, int quantity) {
+    public CartDomain(int id, String name, Double price, String image, int quantity) {
         this.id = id;
         this.name = name;
         this.price = price;
-
+        this.image = image;
         this.quantity = quantity;
     }
 
@@ -51,13 +51,13 @@ public class CartDomain {
         this.price = price;
     }
 
-//    public String getImage() {
-//        return image;
-//    }
-//
-//    public void setImage(String image) {
-//        this.image = image;
-//    }
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 
     public int getQuantity() {
         return quantity;

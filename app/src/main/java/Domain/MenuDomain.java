@@ -8,12 +8,12 @@ import java.util.List;
 
 public class MenuDomain implements Serializable {
     private int id;
-    private String name;
-    private String desc;
+    private String name_pro;
+    private String desciption;
     private Double price;
     private String image;
     private Timestamp create_at;
-    private int status;
+    private boolean status;
     private int numberInCart;
     @SerializedName("data")
     private List<MenuDomain> listData;
@@ -22,10 +22,10 @@ public class MenuDomain implements Serializable {
     @SerializedName("getData")
     private List<MenuDomain> menuDomainList;
 
-    public MenuDomain(int id, String name, String desc, Double price, String image, Timestamp create_at, int status, List<MenuDomain> listData, int category_id, List<MenuDomain> menuDomainList) {
+    public MenuDomain(int id, String name_pro, String desciption, Double price, String image, Timestamp create_at, boolean status, List<MenuDomain> listData, int category_id, List<MenuDomain> menuDomainList) {
         this.id = id;
-        this.name = name;
-        this.desc = desc;
+        this.name_pro = name_pro;
+        this.desciption = desciption;
         this.price = price;
         this.image = image;
         this.create_at = create_at;
@@ -37,8 +37,8 @@ public class MenuDomain implements Serializable {
 
     public MenuDomain() {
         this.id = id;
-        this.name = name;
-        this.desc = desc;
+        this.name_pro = name_pro;
+        this.desciption = desciption;
         this.price = price;
         this.image = image;
         this.create_at = create_at;
@@ -57,20 +57,28 @@ public class MenuDomain implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getName_pro() {
+        return name_pro;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName_pro(String name_pro) {
+        this.name_pro = name_pro;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getDesciption() {
+        return desciption;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setDesciption(String desciption) {
+        this.desciption = desciption;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 
     public Double getPrice() {
@@ -97,13 +105,7 @@ public class MenuDomain implements Serializable {
         this.create_at = create_at;
     }
 
-    public int getStatus() {
-        return status;
-    }
 
-    public void setStatus(int status) {
-        this.status = status;
-    }
 
     public int getNumberInCart() {
         return numberInCart;

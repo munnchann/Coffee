@@ -23,7 +23,7 @@ public class CartManagement {
         boolean existAlready = false;
         int n = 0;
         for(int i = 0; i< listMenu.size(); i++){
-            if(listMenu.get(i).getName().equals(item.getName())){
+            if(listMenu.get(i).getName_pro().equals(item.getName_pro())){
                 existAlready = true;
                 n = i;
                 break;

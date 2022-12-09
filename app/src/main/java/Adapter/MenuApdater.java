@@ -3,6 +3,7 @@ package Adapter;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -69,16 +70,21 @@ public class MenuApdater extends RecyclerView.Adapter<MenuApdater.ViewHolder> im
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        String baseUrl = "http://10.0.2.2:4000/api/product/";
+        String baseUrl = "http://10.0.2.2:4000/image/";
         MenuDomain carts = menuDomains.get(position);
-        holder.name_pro.setText(menuDomains.get(position).getName());
-        holder.price_product.setText(String.valueOf( menuDomains.get(position).getPrice()) + '$');
-//        Glide.with(holder.itemView.getContext())
-//                .load(baseUrl +  menuDomains.get(position).getImage())
-//                .into(holder.img_product);
-//        Glide.with(holder.itemView.getContext())
-//                .load("https://vnpi-hcm.vn/wp-content/uploads/2018/01/no-image-800x600-768x576.png")
-//                .into(holder.img_product);
+        holder.name_pro.setText(menuDomains.get(position).getName_pro());
+        holder.price_product.setText(String.valueOf(menuDomains.get(position).getPrice()) + '$');
+        Picasso picasso = new Picasso.Builder(holder.itemView.getContext())
+                .listener(new Picasso.Listener() {
+                    @Override
+                    public void onImageLoadFailed(Picasso picasso, Uri uri, Exception exception) {
+                        Log.e("PICASSO", uri.toString(), exception);
+                    }
+                })
+                .build();
+
+        picasso.load(baseUrl + menuDomains.get(position).getImage())
+                .into(holder.img_product);
         holder.mainLayoutShow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -89,15 +95,14 @@ public class MenuApdater extends RecyclerView.Adapter<MenuApdater.ViewHolder> im
                     MenuDomain book = menuDomains.get(holder.getAdapterPosition());
 
                     //Adding book details to intent
-                    intent.putExtra(ProductKey,book.getName());
-                    intent.putExtra(DescKey,book.getDesc());
-                    intent.putExtra(PriceKey,book.getPrice());
-                    intent.putExtra(ImgKey,book.getImage());
+                    intent.putExtra(ProductKey, book.getName_pro());
+                    intent.putExtra(PriceKey, book.getPrice());
+                    intent.putExtra(ImgKey, book.getImage());
                     intent.putExtra(IdKey, book.getId());
 
                     //Starting another activity to show book details
                     holder.itemView.getContext().startActivity(intent);
-                }catch (Exception e){
+                } catch (Exception e) {
                     Log.d("Cannot get product", "Error");
                     e.printStackTrace();
                 }
@@ -123,12 +128,12 @@ public class MenuApdater extends RecyclerView.Adapter<MenuApdater.ViewHolder> im
             @Override
             protected FilterResults performFiltering(CharSequence charSequence) {
                 String strSearch = charSequence.toString();
-                if(strSearch.isEmpty()){
+                if (strSearch.isEmpty()) {
                     menuDomains = listProduct;
-                }else {
+                } else {
                     List<MenuDomain> list = new ArrayList<>();
-                    for(MenuDomain menu : listProduct){
-                        if(menu.getName().toLowerCase().contains(strSearch.toLowerCase())){
+                    for (MenuDomain menu : listProduct) {
+                        if (menu.getName_pro().toLowerCase().contains(strSearch.toLowerCase())) {
                             list.add(menu);
                         }
                     }

@@ -96,7 +96,7 @@ public class CartActivity extends AppCompatActivity {
 
         loadComponent();
         initView();
-        ahBottomNavigation = findViewById(R.id.bottom_navigation);
+//        ahBottomNavigation = findViewById(R.id.bottom_navigation);
         noproduct = findViewById(R.id.noproduct);
         imgempty = findViewById(R.id.imgempty);
         notification = findViewById(R.id.badge);
@@ -163,12 +163,12 @@ public class CartActivity extends AppCompatActivity {
                 public void plusQty(CartDomain cartDomain) {
                     String name = cartDomain.getName();
                     Double price = cartDomain.getPrice();
-//            String image = String.valueOf(img_pro.);
+                    String image = String.valueOf(cartDomain.getImage());
                     int quantity = cartDomain.getQuantity();
                     int id = cartDomain.getId();
                     Boolean check = CartDatabase.getInstance(CartActivity.this).cartDao().isexist(id);
                     try {
-                        CartDomain cart = new CartDomain(id, name, price, quantity);
+                        CartDomain cart = new CartDomain(id, name, price,image, quantity);
 
                             if (check == true && quantity <= 9) {
                                 quantity = quantity + 1;
@@ -192,12 +192,12 @@ public class CartActivity extends AppCompatActivity {
                 public void minorQty(CartDomain cartDomain) {
                     String name = cartDomain.getName();
                     Double price = cartDomain.getPrice();
-//            String image = String.valueOf(img_pro.);
+                    String image = String.valueOf(cartDomain.getImage());
                     int quantity = cartDomain.getQuantity();
                     int id = cartDomain.getId();
                     Boolean check = CartDatabase.getInstance(CartActivity.this).cartDao().isexist(id);
                     try {
-                        CartDomain cart = new CartDomain(id, name, price, quantity);
+                        CartDomain cart = new CartDomain(id, name, price,image, quantity);
                         if (check == true) {
                             if (quantity <= 1) {
                                 minor.setEnabled(false);
@@ -237,28 +237,28 @@ public class CartActivity extends AppCompatActivity {
 
     }
 
-    public void setBottom() {
-        AHBottomNavigation ahBottomNavigation = (AHBottomNavigation) findViewById(R.id.bottom_navigation);
-
-        AHBottomNavigationItem item1 = new AHBottomNavigationItem(R.string.tab_1, R.drawable.shop, R.color.color_tab_1);
-        AHBottomNavigationItem item2 = new AHBottomNavigationItem(R.string.tab_2, R.drawable.categories, R.color.color_tab_2);
-        AHBottomNavigationItem item3 = new AHBottomNavigationItem(R.string.tab_3, R.drawable.gift_box, R.color.color_tab_3);
-        AHBottomNavigationItem item4 = new AHBottomNavigationItem(R.string.tab_4, R.drawable.settings, R.color.color_tab_4);
-        // Add items
-        ahBottomNavigation.addItem(item1);
-        ahBottomNavigation.addItem(item2);
-        ahBottomNavigation.addItem(item3);
-        ahBottomNavigation.addItem(item4);
-
-        ahBottomNavigation.setColored(true);
-        if (CartDatabase.getInstance(this).cartDao().getAllCart().size() > 0) {
-            rcvlistord.setOnTouchListener(new TranslateAnimation(this, ahBottomNavigation));
-            payy.setOnTouchListener(new TranslateAnimation(this, ahBottomNavigation));
-        } else {
-
-        }
-
-    }
+//    public void setBottom() {
+//        AHBottomNavigation ahBottomNavigation = (AHBottomNavigation) findViewById(R.id.bottom_navigation);
+//
+//        AHBottomNavigationItem item1 = new AHBottomNavigationItem(R.string.tab_1, R.drawable.shop, R.color.color_tab_1);
+//        AHBottomNavigationItem item2 = new AHBottomNavigationItem(R.string.tab_2, R.drawable.categories, R.color.color_tab_2);
+//        AHBottomNavigationItem item3 = new AHBottomNavigationItem(R.string.tab_3, R.drawable.gift_box, R.color.color_tab_3);
+//        AHBottomNavigationItem item4 = new AHBottomNavigationItem(R.string.tab_4, R.drawable.settings, R.color.color_tab_4);
+//        // Add items
+//        ahBottomNavigation.addItem(item1);
+//        ahBottomNavigation.addItem(item2);
+//        ahBottomNavigation.addItem(item3);
+//        ahBottomNavigation.addItem(item4);
+//
+//        ahBottomNavigation.setColored(true);
+//        if (CartDatabase.getInstance(this).cartDao().getAllCart().size() > 0) {
+//            rcvlistord.setOnTouchListener(new TranslateAnimation(this, ahBottomNavigation));
+//            payy.setOnTouchListener(new TranslateAnimation(this, ahBottomNavigation));
+//        } else {
+//
+//        }
+//
+//    }
 
     private void addEvents() {
         /// Back
@@ -288,7 +288,7 @@ public class CartActivity extends AppCompatActivity {
                 intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, config);
                 intent.putExtra(PaymentActivity.EXTRA_PAYMENT, payPalPayment);
                 startActivityForResult(intent, PAYPAL_REQUEST_CODE);
-                sendOrdPayPal();
+//                sendOrdPayPal();
 
 //                payPalButton.setup(
 //                        new CreateOrder() {
@@ -333,7 +333,7 @@ public class CartActivity extends AppCompatActivity {
         btnord2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sendOrdMoney();
+//                sendOrdMoney();
             }
         });
 
@@ -367,163 +367,163 @@ public class CartActivity extends AppCompatActivity {
             btnord.setVisibility(View.GONE);
         }
     }
-        private void sendOrdPayPal () {
-            total = totalPrice.getText().toString();
-            OrderDomain ord = new OrderDomain();
-            Calendar c = Calendar.getInstance();
-            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-            String formattedDate = df.format(c.getTime());
+//        private void sendOrdPayPal () {
+//            total = totalPrice.getText().toString();
+//            OrderDomain ord = new OrderDomain();
+//            Calendar c = Calendar.getInstance();
+//            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+//            String formattedDate = df.format(c.getTime());
+//
+//            ord.user_id = 1;
+//            ord.total = Double.parseDouble(total);
+//            ord.create_at = formattedDate;
+//            ord.ouput_status = "Success";
+//            ord.order_status = "PayPal";
+//            ord.shipInfo_id = 1;
+//            ord.employee_id = 1;
+//            OrderDatabase.getInstance(this).orderDao().InsertOrd(ord);
+//            System.out.println(OrderDatabase.getInstance(this).orderDao().getAll());
+//            int idOrd = ord.id;
+//            ApiService.apiService.sendOrd(ord).enqueue(new Callback<OrderDomain>() {
+//                @Override
+//                public void onResponse(Call<OrderDomain> call, Response<OrderDomain> response) {
+//                    String total1 = totalPrice.getText().toString();
+//                    OrderDomain order = response.body();
+//                    if (order != null) {
+//                        Intent intent = new Intent(CartActivity.this, ConfirmPay.class);
+//                        intent.putExtra("Total_Price", total1);
+//                        startActivity(intent);
+//                        int ID = order.id;
+//                        for (CartDomain cartDomain : CartDatabase.getInstance(CartActivity.this).cartDao().getAllCart()) {
+//                            OrderDetailDomain ordDetail = new OrderDetailDomain();
+//                            ordDetail.order_id = ID;
+//                            ordDetail.product_id = cartDomain.id;
+//                            ordDetail.quanity = cartDomain.quantity;
+//                            ordDetail.discount_id = 1;
+//                            ordDetail.ori_price = cartDomain.price;
+//                            ordDetail.total = (cartDomain.price * cartDomain.quantity);
+//                            ordDetail.create_at = formattedDate;
+//                            ApiService.apiService.sendOrdDetail(ordDetail).enqueue(new Callback<OrderDetailDomain>() {
+//                                @Override
+//                                public void onResponse(Call<OrderDetailDomain> call, Response<OrderDetailDomain> response) {
+//                                    OrderDetailDomain orderDetail = response.body();
+//                                    if (orderDetail != null) {
+//                                        System.out.println("Success");
+//                                    } else {
+//                                        System.out.println("Unsucess");
+//                                    }
+//                                }
+//
+//                                @Override
+//                                public void onFailure(Call<OrderDetailDomain> call, Throwable t) {
+//                                    Toast.makeText(CartActivity.this, "Error", Toast.LENGTH_SHORT).show();
+//                                }
+//                            });
+//                        }
+//                    }
+//                }
+//
+//                @Override
+//                public void onFailure(Call<OrderDomain> call, Throwable t) {
+//                    Toast.makeText(CartActivity.this, "Error", Toast.LENGTH_SHORT).show();
+//                }
+//            });
+//            for (CartDomain cartDomain : CartDatabase.getInstance(this).cartDao().getAllCart()) {
+//                OrderDetailDomain ordDetail = new OrderDetailDomain();
+//                ordDetail.order_id = idOrd;
+//                ordDetail.product_id = cartDomain.id;
+//                ordDetail.quanity = cartDomain.quantity;
+//                ordDetail.discount_id = 1;
+//                ordDetail.ori_price = cartDomain.price;
+//                ordDetail.total = (cartDomain.price * cartDomain.quantity);
+//                ordDetail.create_at = formattedDate;
+//                Ord_Detail_Database.getInstance(this).ord_detail_dao().InsertOrd_Detail(ordDetail);
+//                System.out.println(Ord_Detail_Database.getInstance(this).ord_detail_dao().getAll());
+//                ApiService.apiService.sendOrdDetail(ordDetail).enqueue(new Callback<OrderDetailDomain>() {
+//                    @Override
+//                    public void onResponse(Call<OrderDetailDomain> call, Response<OrderDetailDomain> response) {
+//                        OrderDetailDomain orderDetail = response.body();
+//                        if (orderDetail != null) {
+//                            System.out.println("Success");
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onFailure(Call<OrderDetailDomain> call, Throwable t) {
+//                        Toast.makeText(CartActivity.this, "Error", Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+//            }
+//
+//
+//        }
 
-            ord.user_id = 1;
-            ord.total = Double.parseDouble(total);
-            ord.create_at = formattedDate;
-            ord.ouput_status = "Success";
-            ord.order_status = "PayPal";
-            ord.shipInfo_id = 1;
-            ord.employee_id = 1;
-            OrderDatabase.getInstance(this).orderDao().InsertOrd(ord);
-            System.out.println(OrderDatabase.getInstance(this).orderDao().getAll());
-            int idOrd = ord.id;
-            ApiService.apiService.sendOrd(ord).enqueue(new Callback<OrderDomain>() {
-                @Override
-                public void onResponse(Call<OrderDomain> call, Response<OrderDomain> response) {
-                    String total1 = totalPrice.getText().toString();
-                    OrderDomain order = response.body();
-                    if (order != null) {
-                        Intent intent = new Intent(CartActivity.this, ConfirmPay.class);
-                        intent.putExtra("Total_Price", total1);
-                        startActivity(intent);
-                        int ID = order.id;
-                        for (CartDomain cartDomain : CartDatabase.getInstance(CartActivity.this).cartDao().getAllCart()) {
-                            OrderDetailDomain ordDetail = new OrderDetailDomain();
-                            ordDetail.order_id = ID;
-                            ordDetail.product_id = cartDomain.id;
-                            ordDetail.quanity = cartDomain.quantity;
-                            ordDetail.discount_id = 1;
-                            ordDetail.ori_price = cartDomain.price;
-                            ordDetail.total = (cartDomain.price * cartDomain.quantity);
-                            ordDetail.create_at = formattedDate;
-                            ApiService.apiService.sendOrdDetail(ordDetail).enqueue(new Callback<OrderDetailDomain>() {
-                                @Override
-                                public void onResponse(Call<OrderDetailDomain> call, Response<OrderDetailDomain> response) {
-                                    OrderDetailDomain orderDetail = response.body();
-                                    if (orderDetail != null) {
-                                        System.out.println("Success");
-                                    } else {
-                                        System.out.println("Unsucess");
-                                    }
-                                }
-
-                                @Override
-                                public void onFailure(Call<OrderDetailDomain> call, Throwable t) {
-                                    Toast.makeText(CartActivity.this, "Error", Toast.LENGTH_SHORT).show();
-                                }
-                            });
-                        }
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<OrderDomain> call, Throwable t) {
-                    Toast.makeText(CartActivity.this, "Error", Toast.LENGTH_SHORT).show();
-                }
-            });
-            for (CartDomain cartDomain : CartDatabase.getInstance(this).cartDao().getAllCart()) {
-                OrderDetailDomain ordDetail = new OrderDetailDomain();
-                ordDetail.order_id = idOrd;
-                ordDetail.product_id = cartDomain.id;
-                ordDetail.quanity = cartDomain.quantity;
-                ordDetail.discount_id = 1;
-                ordDetail.ori_price = cartDomain.price;
-                ordDetail.total = (cartDomain.price * cartDomain.quantity);
-                ordDetail.create_at = formattedDate;
-                Ord_Detail_Database.getInstance(this).ord_detail_dao().InsertOrd_Detail(ordDetail);
-                System.out.println(Ord_Detail_Database.getInstance(this).ord_detail_dao().getAll());
-                ApiService.apiService.sendOrdDetail(ordDetail).enqueue(new Callback<OrderDetailDomain>() {
-                    @Override
-                    public void onResponse(Call<OrderDetailDomain> call, Response<OrderDetailDomain> response) {
-                        OrderDetailDomain orderDetail = response.body();
-                        if (orderDetail != null) {
-                            System.out.println("Success");
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<OrderDetailDomain> call, Throwable t) {
-                        Toast.makeText(CartActivity.this, "Error", Toast.LENGTH_SHORT).show();
-                    }
-                });
-            }
-
-
-        }
-
-        private void sendOrdMoney () {
-            total = totalPrice.getText().toString();
-            OrderDomain ord = new OrderDomain();
-            Calendar c = Calendar.getInstance();
-            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-            String formattedDate = df.format(c.getTime());
-            ord.user_id = 1;
-            ord.total = Double.parseDouble(total);
-            ord.create_at = formattedDate;
-            ord.ouput_status = "Success";
-            ord.order_status = "Unpay";
-            ord.shipInfo_id = 1;
-            ord.employee_id = 1;
-            ord.payment_id = 1;
-
-            OrderDatabase.getInstance(this).orderDao().InsertOrd(ord);
-            System.out.println(OrderDatabase.getInstance(this).orderDao().getAll());
-            int idOrd = ord.id;
-            ApiService.apiService.sendOrd(ord).enqueue(new Callback<OrderDomain>() {
-                @Override
-                public void onResponse(Call<OrderDomain> call, Response<OrderDomain> response) {
-                    OrderDomain order = response.body();
-
-                        String total1 = totalPrice.getText().toString();
-                    if (order != null) {
-                        Intent intent = new Intent(CartActivity.this, OrdConfirm.class);
-                        intent.putExtra("totals", total1);
-                        startActivity(intent);
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<OrderDomain> call, Throwable t) {
-                    Toast.makeText(CartActivity.this, "Error", Toast.LENGTH_SHORT).show();
-                }
-            });
-            for (CartDomain cartDomain : CartDatabase.getInstance(this).cartDao().getAllCart()) {
-                OrderDetailDomain ordDetail = new OrderDetailDomain();
-                ordDetail.order_id = idOrd;
-                ordDetail.product_id = cartDomain.id;
-                ordDetail.quanity = cartDomain.quantity;
-                ordDetail.discount_id = 1;
-                ordDetail.ori_price = cartDomain.price;
-                ordDetail.total = (cartDomain.price * cartDomain.quantity);
-                ordDetail.create_at = formattedDate;
-                Ord_Detail_Database.getInstance(this).ord_detail_dao().InsertOrd_Detail(ordDetail);
-                System.out.println(Ord_Detail_Database.getInstance(this).ord_detail_dao().getAll());
-                ApiService.apiService.sendOrdDetail(ordDetail).enqueue(new Callback<OrderDetailDomain>() {
-                    @Override
-                    public void onResponse(Call<OrderDetailDomain> call, Response<OrderDetailDomain> response) {
-                        OrderDetailDomain orderDetail = response.body();
-                        if (orderDetail != null) {
-                            System.out.println("Success");
-                        }else{
-                            System.out.println("Unsucess");
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<OrderDetailDomain> call, Throwable t) {
-                        Toast.makeText(CartActivity.this, "Error", Toast.LENGTH_SHORT).show();
-                    }
-                });
-            }
-
-        }
+//        private void sendOrdMoney () {
+//            total = totalPrice.getText().toString();
+//            OrderDomain ord = new OrderDomain();
+//            Calendar c = Calendar.getInstance();
+//            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+//            String formattedDate = df.format(c.getTime());
+//            ord.user_id = 1;
+//            ord.total = Double.parseDouble(total);
+//            ord.create_at = formattedDate;
+//            ord.ouput_status = "Success";
+//            ord.order_status = "Unpay";
+//            ord.shipInfo_id = 1;
+//            ord.employee_id = 1;
+//            ord.payment_id = 1;
+//
+//            OrderDatabase.getInstance(this).orderDao().InsertOrd(ord);
+//            System.out.println(OrderDatabase.getInstance(this).orderDao().getAll());
+//            int idOrd = ord.id;
+//            ApiService.apiService.sendOrd(ord).enqueue(new Callback<OrderDomain>() {
+//                @Override
+//                public void onResponse(Call<OrderDomain> call, Response<OrderDomain> response) {
+//                    OrderDomain order = response.body();
+//
+//                        String total1 = totalPrice.getText().toString();
+//                    if (order != null) {
+//                        Intent intent = new Intent(CartActivity.this, OrdConfirm.class);
+//                        intent.putExtra("totals", total1);
+//                        startActivity(intent);
+//                    }
+//                }
+//
+//                @Override
+//                public void onFailure(Call<OrderDomain> call, Throwable t) {
+//                    Toast.makeText(CartActivity.this, "Error", Toast.LENGTH_SHORT).show();
+//                }
+//            });
+//            for (CartDomain cartDomain : CartDatabase.getInstance(this).cartDao().getAllCart()) {
+//                OrderDetailDomain ordDetail = new OrderDetailDomain();
+//                ordDetail.order_id = idOrd;
+//                ordDetail.product_id = cartDomain.id;
+//                ordDetail.quanity = cartDomain.quantity;
+//                ordDetail.discount_id = 1;
+//                ordDetail.ori_price = cartDomain.price;
+//                ordDetail.total = (cartDomain.price * cartDomain.quantity);
+//                ordDetail.create_at = formattedDate;
+//                Ord_Detail_Database.getInstance(this).ord_detail_dao().InsertOrd_Detail(ordDetail);
+//                System.out.println(Ord_Detail_Database.getInstance(this).ord_detail_dao().getAll());
+//                ApiService.apiService.sendOrdDetail(ordDetail).enqueue(new Callback<OrderDetailDomain>() {
+//                    @Override
+//                    public void onResponse(Call<OrderDetailDomain> call, Response<OrderDetailDomain> response) {
+//                        OrderDetailDomain orderDetail = response.body();
+//                        if (orderDetail != null) {
+//                            System.out.println("Success");
+//                        }else{
+//                            System.out.println("Unsucess");
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onFailure(Call<OrderDetailDomain> call, Throwable t) {
+//                        Toast.makeText(CartActivity.this, "Error", Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+//            }
+//
+//        }
 
         @Override
         public void onDestroy () {

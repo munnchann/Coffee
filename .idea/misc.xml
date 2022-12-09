@@ -45,13 +45,20 @@
         <entry key="..\:/UIAndroid/app/src/main/res/menu/search_bar.xml" value="0.16" />
         <entry key="..\:/UIAndroid/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
         <entry key="..\:/UIAndroid/app/src/main/res/xml/network_security_config.xml" value="0.13472222222222222" />
+        <entry key="..\:/Users/84384/Pictures/Coffee App/UIAndroid/app/src/main/res/drawable/banner_light.xml" value="0.145" />
+        <entry key="..\:/Users/84384/Pictures/Coffee App/UIAndroid/app/src/main/res/drawable/bg.xml" value="0.145" />
+        <entry key="..\:/Users/84384/Pictures/Coffee App/UIAndroid/app/src/main/res/drawable/bottom_bg_detail.xml" value="0.2" />
+        <entry key="..\:/Users/84384/Pictures/Coffee App/UIAndroid/app/src/main/res/drawable/cart_background1.xml" value="0.242" />
+        <entry key="..\:/Users/84384/Pictures/Coffee App/UIAndroid/app/src/main/res/drawable/cv_detail.xml" value="0.2585" />
+        <entry key="..\:/Users/84384/Pictures/Coffee App/UIAndroid/app/src/main/res/drawable/imnor.xml" value="0.2585" />
+        <entry key="..\:/Users/84384/Pictures/Coffee App/UIAndroid/app/src/main/res/drawable/top_bg_detail.xml" value="0.256" />
         <entry key="..\:/Users/84384/Pictures/Coffee App/UIAndroid/app/src/main/res/layout/activity_cart.xml" value="0.16486486486486487" />
         <entry key="..\:/Users/84384/Pictures/Coffee App/UIAndroid/app/src/main/res/layout/activity_confirm_pay.xml" value="0.2" />
-        <entry key="..\:/Users/84384/Pictures/Coffee App/UIAndroid/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/84384/Pictures/Coffee App/UIAndroid/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/84384/Pictures/Coffee App/UIAndroid/app/src/main/res/layout/activity_pro_by_cate.xml" value="0.16486486486486487" />
-        <entry key="..\:/Users/84384/Pictures/Coffee App/UIAndroid/app/src/main/res/layout/activity_show_detail_product.xml" value="0.16486486486486487" />
-        <entry key="..\:/Users/84384/Pictures/Coffee App/UIAndroid/app/src/main/res/layout/show_product.xml" value="0.16486486486486487" />
-        <entry key="..\:/Users/84384/Pictures/Coffee App/UIAndroid/app/src/main/res/layout/view_list_ord.xml" value="0.16486486486486487" />
+        <entry key="..\:/Users/84384/Pictures/Coffee App/UIAndroid/app/src/main/res/layout/activity_show_detail_product.xml" value="0.176" />
+        <entry key="..\:/Users/84384/Pictures/Coffee App/UIAndroid/app/src/main/res/layout/show_product.xml" value="0.4" />
+        <entry key="..\:/Users/84384/Pictures/Coffee App/UIAndroid/app/src/main/res/layout/view_list_ord.xml" value="0.271412680756396" />
         <entry key="..\:/Users/84384/Pictures/Coffee App/UIAndroid/app/src/main/res/layout/viewholder_category.xml" value="0.4" />
       </map>
     </option>

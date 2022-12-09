@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.uipart1.R;
 
 import java.util.List;
@@ -47,12 +48,12 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull CartListAdapter.ViewHolder holder, int position) {
-        String baseUrl = "http://192.168.1.155:4000/api/product/";
+        String baseUrl = "http://10.0.2.2:4000/image/";
         CartDomain carts = cartDomainList.get(position);
         holder.txtname_pro.setText(carts.getName());
-//        Glide.with(holder.itemView.getContext())
-//                .load(baseUrl + cartDomainList.get(position).getImage())
-//                .into(holder.img_ord);
+        Glide.with(holder.itemView.getContext())
+                .load(baseUrl + carts.getImage())
+                .into(holder.img_ord);
         holder.txtprice.setText(String.valueOf(Math.round(carts.getQuantity() * carts.getPrice())));
         holder.quantityPro.setText(String.valueOf(carts.getQuantity()));
         holder.txtid.setText(String.valueOf(carts.getId()));
