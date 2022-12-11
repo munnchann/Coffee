@@ -10,6 +10,7 @@ import Domain.Category;
 import Domain.MenuDomain;
 import Domain.OrderDetailDomain;
 import Domain.OrderDomain;
+import Domain.Users;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -33,10 +34,14 @@ public interface ApiService {
     Call<Category> getListCategory();
     @GET("product")
     Call<MenuDomain> getListProduct();
-//    @GET("product/category/{category_id}")
-//    Call<MenuDomain> getProductByCategory(@Path("category_id") int category_id);
-//    @POST("bill")
-//    Call<OrderDomain> sendOrd(@Body OrderDomain orderDomain);
-//    @POST("ordDetail")
-//    Call<OrderDetailDomain> sendOrdDetail(@Body OrderDetailDomain orderDetailDomain);
+    @GET("product/category/{category_id}")
+    Call<MenuDomain> getProductByCategory(@Path("category_id") int category_id);
+    @POST("bill")
+    Call<OrderDomain> sendOrd(@Body OrderDomain orderDomain);
+    @POST("bill_detail")
+    Call<OrderDetailDomain> sendOrdDetail(@Body OrderDetailDomain orderDetailDomain);
+    @POST("users")
+    Call<Users> Registation(@Body Users users);
+    @POST("login2")
+    Call<Users> Login(@Body Users users);
 }

@@ -92,7 +92,7 @@ public class ShowDetailProduct extends AppCompatActivity {
     private void addCart() {
         String name = String.valueOf(name_product.getText());
         Double price = Double.parseDouble(pricetxt.getText().toString());
-            String image = String.valueOf(img_pro.toString());
+        String image = String.valueOf(img_pro.toString());
         int quantity = Integer.parseInt(qty.getText().toString());
         int id = Integer.parseInt(idpro.getText().toString());
         Boolean check = CartDatabase.getInstance(this).cartDao().isexist(id);
