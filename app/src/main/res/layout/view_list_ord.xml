@@ -5,8 +5,8 @@
     android:id="@+id/mainLayoutOrd"
     android:layout_width="350dp"
     android:layout_height="115dp"
-    android:layout_marginStart="32dp"
-    android:layout_marginTop="15dp"
+    android:layout_marginStart="28dp"
+    android:layout_marginTop="5dp"
     android:orientation="vertical">
 
 
@@ -118,7 +118,7 @@
                 android:layout_marginTop="35dp"
                 android:fontFamily="@font/archivo_narrow"
                 android:text="0"
-                android:textColor="#0E0D0D"
+                android:textColor="#D81818"
                 android:textSize="14sp" />
 
         </androidx.cardview.widget.CardView>

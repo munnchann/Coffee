@@ -32,21 +32,22 @@
         android:id="@+id/paypal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="75dp"
+        android:layout_marginStart="130dp"
         android:layout_marginTop="456dp"
-        android:text="You have successfully paid the amount"
+        android:text="You have successfully paid"
         android:textColor="#171717"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/totalpay"
-        android:layout_width="11dp"
+        android:layout_width="wrap_content"
         android:layout_height="19dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="455dp"
         android:textColor="#813939"
         android:textSize="16sp"
+        android:visibility="gone"
         app:layout_constraintStart_toEndOf="@+id/paypal"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,6 +60,7 @@
         android:text="$"
         android:textColor="#813939"
         android:textSize="16sp"
+        android:visibility="gone"
         app:layout_constraintStart_toEndOf="@+id/totalpay"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -73,15 +75,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ordPay" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnHomeBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
+        android:layout_marginStart="160dp"
         android:layout_marginTop="24dp"
-        android:background="@drawable/banner_light"
-        android:text="BACK HOME"
-        android:textColor="#ECE5E5"
+        android:background="@drawable/search_background"
+        android:backgroundTint="#BCE29E"
+        android:text="BACKHOME"
+        android:textColor="#121010"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ship" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,5 +10,11 @@
     <color name="color_tab_2">#898AA6</color>
     <color name="color_tab_3">#9CB4CC</color>
     <color name="color_tab_4">#5F7161</color>
+    <color name="half_white_gray">#F7F7F7</color>
 
+    <color name="start_color">#F7F8F8</color>
+    <!--    <color name="mid_color">#F2F8F8</color>-->
+    <color name="end_color">#E0C999</color>
+    <color name="account">#F5F5F5</color>
+    <color name="round_icon">#FFF5EE</color>
 </resources>

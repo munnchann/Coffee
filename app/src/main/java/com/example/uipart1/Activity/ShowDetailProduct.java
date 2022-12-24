@@ -1,36 +1,24 @@
 package com.example.uipart1.Activity;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.constraintlayout.widget.ConstraintSet;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ScrollView;
-import android.widget.Scroller;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.example.uipart1.R;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import Adapter.MenuApdater;
 import Database.CartDatabase;
 import Domain.CartDomain;
-import Domain.MenuDomain;
-import Helper.CartManagement;
-import api.ApiService;
-import api.Cart;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class ShowDetailProduct extends AppCompatActivity {
     private TextView qty, addnote, total_price_detail, name_product, detail_product, pricetxt, idpro;
@@ -42,13 +30,17 @@ public class ShowDetailProduct extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_detail_product);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
         initView();
         getView();
         addEvents();
     }
 
     private void getView() {
-        String baseUrl = "http://10.0.2.2:4000/image/";
+        String baseUrl = "http://172.16.10.123:4000/image/";
+      //  String baseUrl = "http://10.0.2.2:4000/image/";
         Intent intent = getIntent();
         name_product.setText(intent.getStringExtra(MenuApdater.ProductKey));
         pricetxt.setText(String.valueOf(intent.getDoubleExtra(MenuApdater.PriceKey, 0)));
@@ -90,9 +82,11 @@ public class ShowDetailProduct extends AppCompatActivity {
     }
 
     private void addCart() {
+
+        Intent intent1 = getIntent();
         String name = String.valueOf(name_product.getText());
         Double price = Double.parseDouble(pricetxt.getText().toString());
-        String image = String.valueOf(img_pro.toString());
+        String image = intent1.getStringExtra(MenuApdater.ImgKey);
         int quantity = Integer.parseInt(qty.getText().toString());
         int id = Integer.parseInt(idpro.getText().toString());
         Boolean check = CartDatabase.getInstance(this).cartDao().isexist(id);
@@ -101,8 +95,10 @@ public class ShowDetailProduct extends AppCompatActivity {
                 CartDomain cart = new CartDomain(id, name, price,image, quantity);
                 CartDatabase.getInstance(this).cartDao().InsertCart(cart);
                 Toast.makeText(this, "Added Success", Toast.LENGTH_SHORT).show();
+                System.out.println(cart);
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
             } else {
                 List<CartDomain> cartDomainList = CartDatabase.getInstance(this).cartDao().getAllCart();
 
@@ -116,8 +112,9 @@ public class ShowDetailProduct extends AppCompatActivity {
                 }
 
                 Toast.makeText(this, "Added product again success", Toast.LENGTH_SHORT).show();
-                Intent intent1 = new Intent(this, MainActivity.class);
-                startActivity(intent1);
+                Intent intent2 = new Intent(this, MainActivity.class);
+                startActivity(intent2);
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -144,8 +141,11 @@ public class ShowDetailProduct extends AppCompatActivity {
         img_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                Intent intent = new Intent(ShowDetailProduct.this, MainActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
             }
+
         });
         img_close.setOnClickListener(new View.OnClickListener() {
             @Override

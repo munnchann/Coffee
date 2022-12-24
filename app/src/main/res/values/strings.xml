@@ -5,4 +5,7 @@
     <string name="tab_2">Category</string>
     <string name="tab_3">Voucher</string>
     <string name="tab_4">Setting</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="app_name">HQDP TechS</string>
+    <string name="text_long">HOME_CatShop</string>
 </resources>

@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.uipart1.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -48,10 +49,11 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull CartListAdapter.ViewHolder holder, int position) {
-        String baseUrl = "http://10.0.2.2:4000/image/";
+       // String baseUrl = "http://10.0.2.2:4000/image/";
+        String baseUrl = "http://172.16.10.123:4000/image/";
         CartDomain carts = cartDomainList.get(position);
         holder.txtname_pro.setText(carts.getName());
-        Glide.with(holder.itemView.getContext())
+        Picasso.with(holder.itemView.getContext())
                 .load(baseUrl + carts.getImage())
                 .into(holder.img_ord);
         holder.txtprice.setText(String.valueOf(Math.round(carts.getQuantity() * carts.getPrice())));

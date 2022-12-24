@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_detail"
     tools:context=".Activity.OrdConfirm">
 
     <TextView
@@ -30,15 +31,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnBackHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="130dp"
+        android:layout_marginStart="160dp"
         android:layout_marginTop="480dp"
-        android:background="@drawable/bottom_bg"
-        android:text="BACK TO HOME"
-        android:textColor="#F3EEEE"
+        android:background="@drawable/search_background"
+        android:backgroundTint="#A7D2CB"
+        android:text="BACKHOME"
+        android:textColor="#151313"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -81,7 +83,7 @@
         android:id="@+id/imgCat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
+        android:layout_marginStart="115dp"
         android:layout_marginTop="188dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

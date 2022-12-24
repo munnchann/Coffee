@@ -8,13 +8,13 @@
 
   <androidx.appcompat.widget.AppCompatButton
       android:id="@+id/btnadd"
-      android:layout_width="250dp"
-      android:layout_height="50dp"
+      android:layout_width="300dp"
+      android:layout_height="60dp"
       android:layout_marginStart="220dp"
       android:layout_marginTop="-110dp"
       android:layout_marginEnd="-200dp"
       android:background="@drawable/imnor"
-      android:backgroundTint="#DBA39A"
+      android:backgroundTint="#5CAC71"
       android:text="PAY NOW"
       android:textColor="#FBFBFB"
       app:layout_constraintEnd_toStartOf="@+id/constraintLayout2"
@@ -32,7 +32,7 @@
       android:id="@+id/constraintLayout4"
       android:layout_width="match_parent"
       android:layout_height="300dp"
-      android:background="#DBA39A">
+      android:background="#4DB151">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="100dp"
@@ -51,17 +51,17 @@
       android:id="@+id/constraintLayout2"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:layout_marginTop="224dp"
+      android:layout_marginTop="216dp"
       android:background="@drawable/bottom_bg_detail"
       app:layout_constraintTop_toTopOf="parent"
-      tools:layout_editor_absoluteX="0dp"/>
+      tools:layout_editor_absoluteX="16dp"/>
 
   <TextView
       android:id="@+id/pricetxt"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginStart="35dp"
-      android:layout_marginTop="190dp"
+      android:layout_marginTop="180dp"
       android:text="1.5 "
       android:textColor="#FFFCFC"
       android:textSize="20sp"
@@ -69,22 +69,24 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
 
-  <ImageView
+  <com.google.android.material.imageview.ShapeableImageView
       android:id="@+id/img_pro"
-      android:layout_width="200dp"
-      android:layout_height="280dp"
-      android:layout_marginStart="160dp"
-      android:layout_marginTop="110dp"
+      android:layout_width="230dp"
+      android:layout_height="230dp"
+      android:layout_marginStart="145dp"
+      android:layout_marginTop="130dp"
+      android:radius="10dp"
+      android:shape="rectangle"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:srcCompat="@drawable/bac_siu" />
+      app:srcCompat="@drawable/capuchino" />
 
   <TextView
       android:id="@+id/textView"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginStart="65dp"
-      android:layout_marginTop="190dp"
+      android:layout_marginTop="180dp"
       android:text="$"
       android:textColor="#F1EEEE"
       android:textSize="16sp"
@@ -112,7 +114,7 @@
       android:layout_width="350dp"
       android:layout_height="wrap_content"
       android:layout_marginStart="50dp"
-      android:layout_marginTop="510dp"
+      android:layout_marginTop="520dp"
       android:layout_marginEnd="50dp"
       android:gravity="center"
       android:text="Cà phê Phin thế hệ mới với chất Phin êm hơn, kết hợp cùng Hạnh nhân thơm bùi mang đến hương vị mới lạ, không thể hấp dẫn hơn!"
@@ -146,9 +148,9 @@
 
   <ImageView
       android:id="@+id/add_img"
-      android:layout_width="25dp"
+      android:layout_width="30dp"
       android:layout_height="30dp"
-      android:layout_marginStart="23dp"
+      android:layout_marginStart="25dp"
       android:layout_marginTop="68dp"
       app:layout_constraintStart_toStartOf="@id/qty"
       app:layout_constraintTop_toTopOf="@id/constraintLayout2"
@@ -156,7 +158,7 @@
 
   <ImageView
       android:id="@+id/minor_img"
-      android:layout_width="25dp"
+      android:layout_width="30dp"
       android:layout_height="30dp"
       android:layout_marginStart="35dp"
       android:layout_marginTop="68dp"
@@ -169,10 +171,10 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginStart="75dp"
-      android:layout_marginTop="72dp"
+      android:layout_marginTop="68dp"
       android:text="1"
       android:textColor="#4CAF50"
-      android:textSize="16sp"
+      android:textSize="20sp"
       android:textStyle="bold"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="@id/constraintLayout2" />
@@ -205,7 +207,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginStart="90dp"
-      android:layout_marginTop="190dp"
+      android:layout_marginTop="180dp"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
       app:srcCompat="@drawable/love_hand_drawn_heart_symbol_outline" />

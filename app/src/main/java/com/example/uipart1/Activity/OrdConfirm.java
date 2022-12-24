@@ -1,5 +1,6 @@
 package com.example.uipart1.Activity;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -20,26 +21,28 @@ import Domain.CartDomain;
 public class OrdConfirm extends AppCompatActivity {
     private TextView wait, ordSucess, txtamount, txtTotal, textView12;
     private Button btnBackHome;
-    private ImageView imageCat;
     List<CartDomain> cart;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ord_confirm);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
         wait = (TextView) findViewById(R.id.wait);
         ordSucess = (TextView) findViewById(R.id.ordSucess);
         btnBackHome = (Button) findViewById(R.id.btnBackHome);
         txtTotal = (TextView) findViewById(R.id.txtTotal);
         textView12 = (TextView) findViewById(R.id.textView12);
         txtamount = (TextView) findViewById(R.id.txtamount);
-        imageCat = (ImageView) findViewById(R.id.imgCat);
         cart = new ArrayList<>();
         btnBackHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(OrdConfirm.this, MainActivity.class);
+                Intent intent = new Intent(OrdConfirm.this, HomeActivity.class);
                 CartDatabase.getInstance(OrdConfirm.this).cartDao().deleteAll();
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
             }
         });
         txtTotal.setText(getIntent().getStringExtra("totals"));

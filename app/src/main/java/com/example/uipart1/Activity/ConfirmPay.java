@@ -1,5 +1,6 @@
 package com.example.uipart1.Activity;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -22,6 +23,9 @@ public class ConfirmPay extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirm_pay);
         ordPay = (TextView) findViewById(R.id.ordPay);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
         paypal = (TextView) findViewById(R.id.paypal);
         btnHomeBack = (Button) findViewById(R.id.btnHomeBack);
         totalpay = (TextView) findViewById(R.id.totalpay);
@@ -31,11 +35,12 @@ public class ConfirmPay extends AppCompatActivity {
         btnHomeBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ConfirmPay.this, MainActivity.class);
+                Intent intent = new Intent(ConfirmPay.this, HomeActivity.class);
                 CartDatabase.getInstance(ConfirmPay.this).cartDao().deleteAll();
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
             }
         });
-        totalpay.setText(getIntent().getStringExtra("Total_Price"));
+        totalpay.setText(getIntent().getStringExtra("paymentTotal"));
     }
 }

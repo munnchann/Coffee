@@ -1,13 +1,14 @@
 package com.example.uipart1.Activity;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
@@ -15,8 +16,7 @@ import android.graphics.Canvas;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
+import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 
 import android.widget.LinearLayout;
@@ -28,6 +28,8 @@ import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 import com.example.uipart1.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.tabs.TabItem;
+import com.google.android.material.tabs.TabLayout;
 import com.nex3z.notificationbadge.NotificationBadge;
 
 import java.util.ArrayList;
@@ -55,10 +57,11 @@ public class MainActivity extends AppCompatActivity {
     private TextView txtTimeStamp;
     private AHBottomNavigation ahBottomNavigation;
     private NotificationBadge notification;
-    private ImageView btnsearch;
+    private ImageView btnsearch, avatarShop;
     private SearchView searchView;
     private MenuApdater menuApdater;
-
+    private LinearLayout homeBtn, Btncategory, settingBtn;
+    private CardView app_bar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,12 +71,19 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewFoodList();
         ListMenu = new ArrayList<>();
         categoryList = new ArrayList<>();
-       // callApiCategory();
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
+        callApiCategory();
 //        ahBottomNavigation = findViewById(R.id.bottom_navigation);
         notification = findViewById(R.id.badge);
         btnsearch = findViewById(R.id.btnsearch);
         menuApdater = new MenuApdater(ListMenu);
-
+        avatarShop = findViewById(R.id.avatarShop);
+        settingBtn = findViewById(R.id.settingBtn);
+        Btncategory = findViewById(R.id.Btncategory);
+        homeBtn = findViewById(R.id.homeBtn);
+        app_bar = findViewById(R.id.cardView);
 //        setNaviGationBottom();
         callApiGetProduct();
         setTime();
@@ -81,6 +91,21 @@ public class MainActivity extends AppCompatActivity {
         if(CartDatabase.getInstance(this).cartDao().getAllCart() != null){
             notification.setText(String.valueOf(CartDatabase.getInstance(this).cartDao().getAllCart().size()));
         }
+        StartAnim();
+        setBottomNavigation();
+    }
+
+    private void StartAnim(){
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                avatarShop.animate().rotationBy(360).withEndAction(this).setDuration(10000)
+                        .setInterpolator(new LinearInterpolator()).start();
+            }
+        };
+
+        avatarShop.animate().rotationBy(360).withEndAction(runnable).setDuration(10000)
+                .setInterpolator(new LinearInterpolator()).start();
     }
 
     // Category recyclerview
@@ -116,24 +141,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // api call category
-//    private void callApiCategory() {
-//
-//        ApiService.apiService.getListCategory().enqueue(new Callback<Category>() {
-//            @Override
-//            public void onResponse(Call<Category> call, Response<Category> response) {
-//                categoryList = response.body().getListCategory();
-//                CategoryAdapter categoryAdapter = new CategoryAdapter(categoryList);
-//                recyclerViewCategoryList.setAdapter(categoryAdapter);
-//
-//            }
-//
-//            @Override
-//            public void onFailure(Call<Category> call, Throwable t) {
-//                Toast.makeText(MainActivity.this, "onFailure" + t.getMessage(), Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//
-//    }
+    private void callApiCategory() {
+
+        ApiService.apiService.getListCategory().enqueue(new Callback<Category>() {
+            @Override
+            public void onResponse(Call<Category> call, Response<Category> response) {
+                categoryList = response.body().getListCategory();
+                CategoryAdapter categoryAdapter = new CategoryAdapter(categoryList);
+                recyclerViewCategoryList.setAdapter(categoryAdapter);
+
+            }
+
+            @Override
+            public void onFailure(Call<Category> call, Throwable t) {
+                Toast.makeText(MainActivity.this, "onFailure" + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
 
     // call api product
     private void callApiGetProduct() {
@@ -204,7 +229,32 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    private void setBottomNavigation(){
+        Btncategory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
+        homeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(intent);
+            }
+        });
+        settingBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, setting.class);
+                startActivity(intent);
+            }
+        });
+        recyclerViewCategoryList.setOnTouchListener(new TranslateAnimation(this, app_bar));
+        recyclerViewFoodList.setOnTouchListener(new TranslateAnimation(this, app_bar));
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.search_bar, menu);

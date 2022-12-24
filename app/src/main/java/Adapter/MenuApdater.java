@@ -69,8 +69,8 @@ public class MenuApdater extends RecyclerView.Adapter<MenuApdater.ViewHolder> im
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
-        String baseUrl = "http://10.0.2.2:4000/image/";
+        String baseUrl = "http://172.16.10.123:4000/image/";
+      //  String baseUrl = "http://10.0.2.2:4000/image/";
         MenuDomain carts = menuDomains.get(position);
         holder.name_pro.setText(menuDomains.get(position).getName_pro());
         holder.price_product.setText(String.valueOf(menuDomains.get(position).getPrice()) + '$');
@@ -99,7 +99,7 @@ public class MenuApdater extends RecyclerView.Adapter<MenuApdater.ViewHolder> im
                     intent.putExtra(PriceKey, book.getPrice());
                     intent.putExtra(ImgKey, book.getImage());
                     intent.putExtra(IdKey, book.getId());
-
+                    intent.putExtra(DescKey,book.getDesciption());
                     //Starting another activity to show book details
                     holder.itemView.getContext().startActivity(intent);
                 } catch (Exception e) {

@@ -7,8 +7,11 @@
         android:minSdkVersion="INSERT_YOUR_DESIRED_minSdkVersion_HERE"
         tools:overrideLibrary="com.paypal.android.sdk.payments" />
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -22,12 +25,48 @@
         android:theme="@style/Theme.UiPart1"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name="com.example.uipart1.Activity.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.uipart1.Activity.ChangePassword"
+            android:exported="false" />
+        <activity
+            android:name="com.example.uipart1.Activity.setting"
+            android:exported="false" />
+        <activity
+            android:name="com.example.uipart1.Activity.profile_edit"
+            android:exported="false" />
+        <activity
+            android:name="com.example.uipart1.Activity.AddressUser"
+            android:exported="false" />
+        <activity
+            android:name="com.example.uipart1.Activity.PayActivity2"
+            android:exported="true" />
+        <!--
+             TODO: Before you run your application, you need a Google Maps API key.
+
+             To get one, follow the directions here:
+
+                https://developers.google.com/maps/documentation/android-sdk/get-api-key
+
+             Once you have your API key (it starts with "AIza"), define a new property in your
+             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
+             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAqpw5OxlsWVduDAxzVMUrS7tmQohJMzQA" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
 
         <activity
-            android:name="com.example.uipart1.Activity.ConfirmPay"
-            android:exported="true" />
+            android:name="com.example.uipart1.Activity.MapsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_maps" />
         <activity
-            android:name="com.example.uipart1.Activity.MakePaymentActivity"
+            android:name="com.example.uipart1.Activity.ConfirmPay"
             android:exported="true" />
         <activity
             android:name="com.example.uipart1.Activity.OrdConfirm"
@@ -36,16 +75,28 @@
             android:name="com.example.uipart1.Activity.ProByCate"
             android:exported="true" />
         <activity
-            android:name="com.example.uipart1.Activity.PayActivity"
+            android:name="com.example.uipart1.Activity.CartActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.uipart1.Activity.CartActivity"
+            android:name="com.example.uipart1.Activity.CheckOutActivity"
             android:exported="true" />
         <activity
             android:name="com.example.uipart1.Activity.ShowDetailProduct"
             android:exported="true" />
         <activity
             android:name="com.example.uipart1.Activity.MainActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.uipart1.Activity.SignUpPageActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.uipart1.Activity.LoginPageActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.uipart1.Activity.OutLineActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.uipart1.Activity.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -17,23 +17,14 @@ public class Category {
    private String nickname;
     @SerializedName("data")
    private List<Category> listCategory;
-    @SerializedName("response")
-    private List<Category> categoryList;
 
-    public Category(int categoryid, String name, String nickname, List<Category> listCategory, List<Category> categoryList) {
+
+    public Category(int categoryid, String name, String nickname, List<Category> listCategory) {
         this.categoryid = categoryid;
         this.name = name;
         this.nickname = nickname;
         this.listCategory = listCategory;
-        this.categoryList = categoryList;
-    }
 
-    public List<Category> getCategoryList() {
-        return categoryList;
-    }
-
-    public void setCategoryList(List<Category> categoryList) {
-        this.categoryList = categoryList;
     }
 
     public int getCategoryid() {

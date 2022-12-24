@@ -1,37 +1,70 @@
 package Domain;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class Users {
-  public String first_name;
-  public   String last_name;
-  public   String email;
-  public   String phone;
-  public   String password;
-  public   String image;
+    public int id;
+    public String first_name;
+    public String last_name;
+    public String email;
+    public String phone;
+    public String password;
+    public String image;
+    @SerializedName("results")
+    private List<Users> listUser;
+    public String address;
 
-  public List<Users> listUser;
-
-    public Users() {
+    public Users(String phone) {
+        this.phone = phone;
     }
 
-    public Users(String first_name, String last_name, String email, String phone, String password, List<Users> listUser) {
+    public Users(String phone, String password) {
+        this.phone = phone;
+        this.password = password;
+    }
+
+    public Users(int id, String password) {
+        this.id = id;
+        this.password = password;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "Users{" +
+                "id=" + id +
+                ", first_name='" + first_name + '\'' +
+                ", last_name='" + last_name + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
+
+    public Users(String first_name, String last_name, String email, String phone, String password, String address) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.email = email;
         this.phone = phone;
         this.password = password;
-        this.listUser = listUser;
-    }
-
-    public Users(String first_name, String last_name, String email, String phone, String password, String image, List<Users> listUser) {
-        this.first_name = first_name;
-        this.last_name = last_name;
-        this.email = email;
-        this.phone = phone;
-        this.password = password;
-        this.image = image;
-        this.listUser = listUser;
+        this.address = address;
     }
 
     public String getFirst_name() {

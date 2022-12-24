@@ -11,7 +11,7 @@
         android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FEFCF3">
+        android:background="#FDFDFD">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -50,20 +50,123 @@
 
             </androidx.recyclerview.widget.RecyclerView>
 
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Information"
+                android:textColor="#171616"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/archivo_narrow"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp">
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:columnCount="2"
+                    android:rowCount="3">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_row="0"
+                        android:layout_rowWeight="1"
+                        android:layout_column="0"
+                        android:layout_gravity="fill"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="8dp">
+
+                        <LinearLayout
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginStart="-140dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/map"></ImageView>
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/btnwriteaddress"
+                            android:layout_width="20dp"
+                            android:layout_height="15dp"
+                            android:layout_marginStart="320dp"
+                            android:layout_marginTop="35dp"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toStartOf="@id/txtaddress"
+                            app:layout_constraintTop_toTopOf="@id/txtnameuser"
+                            app:srcCompat="@drawable/next" />
+
+                        <TextView
+                            android:id="@+id/txtnameuser"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="85dp"
+                            android:layout_marginTop="5dp"
+                            android:text="Name"
+                            android:textColor="#191818"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/txtsdt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="85dp"
+                            android:layout_marginTop="30dp"
+                            android:text="Phone"
+                            android:textColor="#191818"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/txtnameuser" />
+
+                        <TextView
+                            android:id="@+id/txtaddress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="85dp"
+                            android:layout_marginTop="55dp"
+                            android:text="Address"
+                            android:textColor="#191818"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/txtsdt" />
+
+                    </androidx.cardview.widget.CardView>
+
+                </GridLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/payy"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/textView10"
+                    android:id="@+id/iduser"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="23dp"
-                    android:layout_marginTop="20dp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/txtchoose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="40dp"
                     android:fontFamily="@font/archivo_narrow"
-                    android:text="Delivery Location"
+                    android:text="Choose Payment Method"
                     android:textColor="#332222"
                     android:textSize="16sp"
                     android:textStyle="bold"
@@ -71,92 +174,56 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/imageView8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="30dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/textView10"
-                    app:srcCompat="@drawable/map" />
-
-                <TextView
-                    android:id="@+id/txtaddress"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="45dp"
-                    android:layout_marginTop="32dp"
-                    android:text="35/6 D5  Binh Thanh HCM"
-                    android:textColor="#191818"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/textView10" />
-
-                <TextView
-                    android:id="@+id/textView13"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="23dp"
-                    android:layout_marginTop="80dp"
-                    android:fontFamily="@font/archivo_narrow"
-                    android:text="Payment"
-                    android:textColor="#332222"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/textView10" />
-
-                <ImageView
                     android:id="@+id/imageView10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
+                    android:layout_marginStart="25dp"
                     android:layout_marginTop="30dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/textView13"
+                    app:layout_constraintTop_toTopOf="@id/txtchoose"
                     app:srcCompat="@drawable/pay_per_click" />
 
                 <ImageView
                     android:id="@+id/btnnext"
                     android:layout_width="20dp"
                     android:layout_height="15dp"
-                    android:layout_marginStart="370dp"
+                    android:layout_marginStart="340dp"
                     android:layout_marginTop="26dp"
-                    android:visibility="invisible"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/textView13"
-                    app:srcCompat="@drawable/next" />
-
-                <TextView
-                    android:id="@+id/txtpay"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="45dp"
-                    android:layout_marginTop="30dp"
-                    android:textColor="#191818"
                     android:visibility="visible"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/textView13" />
+                    app:layout_constraintTop_toTopOf="@id/txtchoose"
+                    app:srcCompat="@drawable/next" />
+
 
                 <TextView
                     android:id="@+id/txtpay2"
-                    android:layout_width="150dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="45dp"
+                    android:layout_marginStart="60dp"
                     android:layout_marginTop="30dp"
-                    android:text="Pay Pal"
                     android:textColor="#191818"
                     android:visibility="visible"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/textView13" />
+                    app:layout_constraintTop_toTopOf="@id/txtchoose" />
+
+                <TextView
+                    android:id="@+id/txtpay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="30dp"
+                    android:textColor="#191818"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/txtchoose" />
 
                 <ImageView
                     android:id="@+id/imageView12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
-                    android:layout_marginTop="180dp"
+                    android:layout_marginTop="35dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/textView10"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView10"
                     app:srcCompat="@drawable/notes" />
 
                 <TextView
@@ -164,14 +231,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="45dp"
-                    android:layout_marginTop="180dp"
+                    android:layout_marginTop="65dp"
                     android:fontFamily="@font/archivo_narrow"
                     android:text="Order Info"
                     android:textColor="#332222"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/textView10" />
+                    app:layout_constraintTop_toBottomOf="@+id/txtchoose" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -287,28 +354,14 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1">
 
-                <Button
-                    android:id="@+id/btnord2"
-                    android:layout_width="150dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="130dp"
-                    android:layout_marginTop="65dp"
-                    android:background="@drawable/size_background_detail"
-                    android:backgroundTint="#8FCBD3"
-                    android:text="ORDER2"
-                    android:textColor="#EDDDDD"
-                    android:visibility="gone"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnord"
                     android:layout_width="150dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="130dp"
-                    android:layout_marginTop="84dp"
+                    android:layout_marginTop="50dp"
                     android:background="@drawable/imnor"
-                    android:backgroundTint="#FFDCA9"
+                    android:backgroundTint="#EC8E71"
                     android:text="ORDER"
                     android:textColor="#232222"
                     app:layout_constraintStart_toStartOf="parent"
@@ -342,138 +395,4 @@
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-<!--    <androidx.coordinatorlayout.widget.CoordinatorLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="60dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-
-<!--        app:layout_constraintStart_toStartOf="parent">-->
-
-<!--        <com.aurelhubert.ahbottomnavigation.AHBottomNavigation-->
-<!--            android:id="@+id/bottom_navigation"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_alignParentBottom="true"-->
-<!--            android:layout_gravity="bottom"-->
-<!--            android:background="@drawable/bg_detail" />-->
-<!--        &lt;!&ndash;        <com.google.android.material.bottomappbar.BottomAppBar&ndash;&gt;-->
-<!--        &lt;!&ndash;            android:id="@+id/app_bar"&ndash;&gt;-->
-<!--        &lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
-<!--        &lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
-<!--        &lt;!&ndash;            android:layout_gravity="bottom"&ndash;&gt;-->
-<!--        &lt;!&ndash;            android:background="@drawable/size_background_detail"&ndash;&gt;-->
-<!--        &lt;!&ndash;            android:backgroundTint="@color/white"&ndash;&gt;-->
-
-<!--        &lt;!&ndash;            app:fabCradleRoundedCornerRadius="58dp">&ndash;&gt;-->
-
-<!--        &lt;!&ndash;            <LinearLayout&ndash;&gt;-->
-<!--        &lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;-->
-<!--        &lt;!&ndash;                android:layout_height="match_parent">&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                <LinearLayout&ndash;&gt;-->
-<!--        &lt;!&ndash;                    android:layout_width="0dp"&ndash;&gt;-->
-<!--        &lt;!&ndash;                    android:layout_height="match_parent"&ndash;&gt;-->
-<!--        &lt;!&ndash;                    android:layout_weight="0.2">&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                    <LinearLayout&ndash;&gt;-->
-<!--        &lt;!&ndash;                        android:id="@+id/homeBtn"&ndash;&gt;-->
-<!--        &lt;!&ndash;                        android:layout_width="0dp"&ndash;&gt;-->
-<!--        &lt;!&ndash;                        android:layout_height="match_parent"&ndash;&gt;-->
-<!--        &lt;!&ndash;                        android:layout_weight="0.2"&ndash;&gt;-->
-<!--        &lt;!&ndash;                        android:orientation="vertical">&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                        <ImageView&ndash;&gt;-->
-<!--        &lt;!&ndash;                            android:id="@+id/imageView5"&ndash;&gt;-->
-<!--        &lt;!&ndash;                            android:layout_width="match_parent"&ndash;&gt;-->
-<!--        &lt;!&ndash;                            android:layout_height="wrap_content"&ndash;&gt;-->
-<!--        &lt;!&ndash;                            app:srcCompat="@drawable/shop" />&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                        <TextView&ndash;&gt;-->
-<!--        &lt;!&ndash;                            android:id="@+id/shop"&ndash;&gt;-->
-<!--        &lt;!&ndash;                            android:layout_width="match_parent"&ndash;&gt;-->
-<!--        &lt;!&ndash;                            android:layout_height="wrap_content"&ndash;&gt;-->
-<!--        &lt;!&ndash;                            android:text="Home"&ndash;&gt;-->
-<!--        &lt;!&ndash;                            android:textAlignment="center" />&ndash;&gt;-->
-<!--        &lt;!&ndash;                    </LinearLayout>&ndash;&gt;-->
-<!--        &lt;!&ndash;                </LinearLayout>&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                <LinearLayout&ndash;&gt;-->
-<!--        &lt;!&ndash;                    android:layout_width="0dp"&ndash;&gt;-->
-<!--        &lt;!&ndash;                    android:layout_height="match_parent"&ndash;&gt;-->
-<!--        &lt;!&ndash;                    android:layout_weight="0.2">&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                    <LinearLayout&ndash;&gt;-->
-<!--        &lt;!&ndash;                        android:id="@+id/categoryBtn"&ndash;&gt;-->
-<!--        &lt;!&ndash;                        android:layout_width="0dp"&ndash;&gt;-->
-<!--        &lt;!&ndash;                        android:layout_height="match_parent"&ndash;&gt;-->
-<!--        &lt;!&ndash;                        android:layout_weight="0.2"&ndash;&gt;-->
-<!--        &lt;!&ndash;                        android:orientation="vertical">&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                        <ImageView&ndash;&gt;-->
-<!--        &lt;!&ndash;                            android:id="@+id/imageView6"&ndash;&gt;-->
-<!--        &lt;!&ndash;                            android:layout_width="match_parent"&ndash;&gt;-->
-<!--        &lt;!&ndash;                            android:layout_height="wrap_content"&ndash;&gt;-->
-<!--        &lt;!&ndash;                            app:srcCompat="@drawable/categories" />&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                        <TextView&ndash;&gt;-->
-<!--        &lt;!&ndash;                            android:id="@+id/category"&ndash;&gt;-->
-<!--        &lt;!&ndash;                            android:layout_width="match_parent"&ndash;&gt;-->
-<!--        &lt;!&ndash;                            android:layout_height="wrap_content"&ndash;&gt;-->
-<!--        &lt;!&ndash;                            android:text="Categories"&ndash;&gt;-->
-<!--        &lt;!&ndash;                            android:textAlignment="center" />&ndash;&gt;-->
-<!--        &lt;!&ndash;                    </LinearLayout>&ndash;&gt;-->
-<!--        &lt;!&ndash;                </LinearLayout>&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                <LinearLayout&ndash;&gt;-->
-<!--        &lt;!&ndash;                    android:layout_width="0dp"&ndash;&gt;-->
-<!--        &lt;!&ndash;                    android:layout_height="match_parent"&ndash;&gt;-->
-<!--        &lt;!&ndash;                    android:layout_weight="0.2">&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                    <LinearLayout&ndash;&gt;-->
-<!--        &lt;!&ndash;                        android:id="@+id/couponBtn"&ndash;&gt;-->
-<!--        &lt;!&ndash;                        android:layout_width="0dp"&ndash;&gt;-->
-<!--        &lt;!&ndash;                        android:layout_height="match_parent"&ndash;&gt;-->
-<!--        &lt;!&ndash;                        android:layout_weight="0.2"&ndash;&gt;-->
-<!--        &lt;!&ndash;                        android:orientation="vertical">&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                        <ImageView&ndash;&gt;-->
-<!--        &lt;!&ndash;                            android:id="@+id/imageView7"&ndash;&gt;-->
-<!--        &lt;!&ndash;                            android:layout_width="match_parent"&ndash;&gt;-->
-<!--        &lt;!&ndash;                            android:layout_height="wrap_content"&ndash;&gt;-->
-<!--        &lt;!&ndash;                            app:srcCompat="@drawable/gift_box" />&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                        <TextView&ndash;&gt;-->
-<!--        &lt;!&ndash;                            android:id="@+id/coupon"&ndash;&gt;-->
-<!--        &lt;!&ndash;                            android:layout_width="match_parent"&ndash;&gt;-->
-<!--        &lt;!&ndash;                            android:layout_height="wrap_content"&ndash;&gt;-->
-<!--        &lt;!&ndash;                            android:text="Coupon"&ndash;&gt;-->
-<!--        &lt;!&ndash;                            android:textAlignment="center" />&ndash;&gt;-->
-<!--        &lt;!&ndash;                    </LinearLayout>&ndash;&gt;-->
-<!--        &lt;!&ndash;                </LinearLayout>&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                <LinearLayout&ndash;&gt;-->
-<!--        &lt;!&ndash;                    android:id="@+id/settingBtn"&ndash;&gt;-->
-<!--        &lt;!&ndash;                    android:layout_width="0dp"&ndash;&gt;-->
-<!--        &lt;!&ndash;                    android:layout_height="match_parent"&ndash;&gt;-->
-<!--        &lt;!&ndash;                    android:layout_weight="0.2"&ndash;&gt;-->
-<!--        &lt;!&ndash;                    android:orientation="vertical">&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                    <ImageView&ndash;&gt;-->
-<!--        &lt;!&ndash;                        android:id="@+id/imageView4"&ndash;&gt;-->
-<!--        &lt;!&ndash;                        android:layout_width="match_parent"&ndash;&gt;-->
-<!--        &lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;-->
-<!--        &lt;!&ndash;                        app:srcCompat="@drawable/settings" />&ndash;&gt;-->
-
-<!--        &lt;!&ndash;                    <TextView&ndash;&gt;-->
-<!--        &lt;!&ndash;                        android:id="@+id/setting"&ndash;&gt;-->
-<!--        &lt;!&ndash;                        android:layout_width="match_parent"&ndash;&gt;-->
-<!--        &lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;-->
-<!--        &lt;!&ndash;                        android:text="Other"&ndash;&gt;-->
-<!--        &lt;!&ndash;                        android:textAlignment="center" />&ndash;&gt;-->
-<!--        &lt;!&ndash;                </LinearLayout>&ndash;&gt;-->
-<!--        &lt;!&ndash;            </LinearLayout>&ndash;&gt;-->
-<!--        &lt;!&ndash;        </com.google.android.material.bottomappbar.BottomAppBar>&ndash;&gt;-->
-<!--    </androidx.coordinatorlayout.widget.CoordinatorLayout>-->
 </androidx.constraintlayout.widget.ConstraintLayout>

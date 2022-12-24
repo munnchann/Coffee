@@ -12,15 +12,12 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.uipart1.Activity.MainActivity;
 import com.example.uipart1.Activity.ProByCate;
 import com.example.uipart1.R;
 
 import java.util.List;
 
-import Domain.CartDomain;
 import Domain.Category;
-import Domain.MenuDomain;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHolder> {
     public CategoryAdapter(List<Category> categories) {

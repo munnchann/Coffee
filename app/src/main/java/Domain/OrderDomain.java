@@ -9,8 +9,8 @@ public class OrderDomain {
    public int id;
     public int user_id, employee_id;
    public Double total;
-   public int payment_id, shipInfo_id;
-   public String create_at, ouput_status, order_status;
+   public int payment_id, shipInfo_id, voucher_id;
+   public String create_at, ouput_status, order_status, stt_voucher;
 
     public OrderDomain(int id, int user_id, int employee_id, Double total, int payment_id, int shipInfo_id, String create_at, String ouput_status, String order_status) {
         this.id = id;
@@ -33,6 +33,39 @@ public class OrderDomain {
         this.create_at = create_at;
         this.ouput_status = ouput_status;
         this.order_status = order_status;
+    }
+
+    public OrderDomain(int user_id, Double total, int payment_id, String create_at, String ouput_status, String order_status) {
+        this.user_id = user_id;
+        this.total = total;
+        this.payment_id = payment_id;
+        this.create_at = create_at;
+        this.ouput_status = ouput_status;
+        this.order_status = order_status;
+    }
+
+    public OrderDomain(int user_id, Double total, int payment_id, int voucher_id, String create_at, String ouput_status, String order_status, String stt_voucher) {
+        this.user_id = user_id;
+        this.total = total;
+        this.payment_id = payment_id;
+        this.voucher_id = voucher_id;
+        this.create_at = create_at;
+        this.ouput_status = ouput_status;
+        this.order_status = order_status;
+        this.stt_voucher = stt_voucher;
+    }
+
+    @Override
+    public String toString() {
+        return "OrderDomain{" +
+                "id=" + id +
+                ", user_id=" + user_id +
+                ", total=" + total +
+                ", payment_id=" + payment_id +
+                ", create_at='" + create_at + '\'' +
+                ", ouput_status='" + ouput_status + '\'' +
+                ", order_status='" + order_status + '\'' +
+                '}';
     }
 
     public int getId() {
