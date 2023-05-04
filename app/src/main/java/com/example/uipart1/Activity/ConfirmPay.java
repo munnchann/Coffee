@@ -15,7 +15,7 @@ import com.example.uipart1.R;
 import Database.CartDatabase;
 
 public class ConfirmPay extends AppCompatActivity {
-    private TextView ordPay, paypal, totalpay, dolorr, ship;
+    private TextView ordPay, paypal, dolorr, ship;
     private Button btnHomeBack;
     private ImageView imgSucess;
     @Override
@@ -28,7 +28,6 @@ public class ConfirmPay extends AppCompatActivity {
 
         paypal = (TextView) findViewById(R.id.paypal);
         btnHomeBack = (Button) findViewById(R.id.btnHomeBack);
-        totalpay = (TextView) findViewById(R.id.totalpay);
         ship = (TextView) findViewById(R.id.ship);
         dolorr = (TextView) findViewById(R.id.dolorr);
         imgSucess = (ImageView) findViewById(R.id.imgSucess);
@@ -41,6 +40,5 @@ public class ConfirmPay extends AppCompatActivity {
                 overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
             }
         });
-        totalpay.setText(getIntent().getStringExtra("paymentTotal"));
     }
 }

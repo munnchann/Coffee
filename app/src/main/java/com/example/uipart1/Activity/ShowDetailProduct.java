@@ -39,8 +39,8 @@ public class ShowDetailProduct extends AppCompatActivity {
     }
 
     private void getView() {
-        String baseUrl = "http://172.16.10.123:4000/image/";
-      //  String baseUrl = "http://10.0.2.2:4000/image/";
+       // String baseUrl = "http://172.16.10.123:4000/image/";
+        String baseUrl = "http://10.0.2.2:4000/image/";
         Intent intent = getIntent();
         name_product.setText(intent.getStringExtra(MenuApdater.ProductKey));
         pricetxt.setText(String.valueOf(intent.getDoubleExtra(MenuApdater.PriceKey, 0)));

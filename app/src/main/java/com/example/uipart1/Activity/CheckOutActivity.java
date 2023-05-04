@@ -51,7 +51,7 @@ import okhttp3.Response;
 
 public class CheckOutActivity extends AppCompatActivity {
     TextView txtPricetotal;
-    private static final String BACKEND_URL = "http://172.16.10.123:4000/"; //10.0.2.2 is port mentioned in server i.e index.js
+    private static final String BACKEND_URL = "http://10.0.2.2:4000/"; //10.0.2.2 is port mentioned in server i.e index.js
     CardInputWidget cardInputWidget;
     Button payButton;
 

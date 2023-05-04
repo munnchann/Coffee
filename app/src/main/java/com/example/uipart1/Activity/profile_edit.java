@@ -242,8 +242,8 @@ public class profile_edit extends AppCompatActivity {
                     sdt.setText(us.getPhone());
                     ltname.setText(us.getLast_name());
                     address.setText(us.getAddress());
-                    String baseUrl = "http://172.16.10.123:4000/image/";
-                    //  String baseUrl = "http://10.0.2.2:4000/image/";
+                   // String baseUrl = "http://172.16.10.123:4000/image/";
+                      String baseUrl = "http://10.0.2.2:4000/image/";
                     if (us.image == null) {
                         Picasso picasso = new Picasso.Builder(getApplicationContext())
                                 .listener(new Picasso.Listener() {

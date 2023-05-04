@@ -49,8 +49,8 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull CartListAdapter.ViewHolder holder, int position) {
-       // String baseUrl = "http://10.0.2.2:4000/image/";
-        String baseUrl = "http://172.16.10.123:4000/image/";
+        String baseUrl = "http://10.0.2.2:4000/image/";
+      //  String baseUrl = "http://172.16.10.123:4000/image/";
         CartDomain carts = cartDomainList.get(position);
         holder.txtname_pro.setText(carts.getName());
         Picasso.with(holder.itemView.getContext())
